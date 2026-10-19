@@ -182,3 +182,9 @@ html body .fullscreen-overlay:has(.mobile-site-menu__content) button[class*=back
 }
 /* Rentals page on phones: booking box fits the first booking step, no empty block under it (10/19/26). Grows once someone starts booking. */
 @media(max-width:600px){html body .ug-rent__embed:not(.is-open){height:560px!important}}
+/* Shop services page on phones (10/19/26): smaller service graphics, full width buttons. Same pass as the SMS ski service page. */
+@media(max-width:600px){
+html body .ug-svc__card img{width:100%!important;height:190px!important;object-fit:contain!important;background:#0b0b0b!important;display:block}
+html body .ug-svc__btns{display:grid!important;grid-template-columns:1fr!important;gap:10px!important}
+html body .ug-svc__btn{display:flex!important;justify-content:center!important;align-items:center!important;width:100%!important;box-sizing:border-box!important;text-align:center!important}
+}
