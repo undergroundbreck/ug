@@ -787,3 +787,24 @@ html body .sms-help{margin:14px 0 4px!important;padding:12px 14px!important;bord
 @media(min-width:769px){.sms-sb{display:none!important}}
 /* Rentals page on phones: booking box fits the first booking step, no empty block under it (10/19/26). Grows once someone starts booking. */
 @media(max-width:600px){html body .sms-rent__embed:not(.is-open){height:560px!important}}
+/* Ski service page: boot fit booking calendar stays closed until "Open booking page" is tapped (10/19/26). Opened by speed.js. */
+html body #book .smsx-book__frame:not(.is-open){display:none!important}
+html body #book .smsx-book:has(.smsx-book__frame:not(.is-open)){grid-template-columns:1fr!important}
+/* Ski service page on phones (10/19/26): tighter hero, shorter photos, full width buttons, bigger rate headings, less dead space */
+@media(max-width:600px){
+html body #tile-video-xHPfjj .ins-tile__title{font-size:46px!important;line-height:.95!important}
+html body #tile-video-xHPfjj .ins-tile__description,html body #tile-video-xHPfjj .ins-tile__description *{font-style:normal!important;font-size:16px!important;line-height:1.5!important}
+html body #tile-video-xHPfjj .ins-tile__description{margin-top:12px!important}
+html body #tile-video-xHPfjj .ins-tile__body{padding:28px 20px 32px!important}
+html body #tile-video-xHPfjj .ins-tile__buttons,html body #tile-video-xHPfjj [class*=ins-tile__button]{display:block!important;width:100%!important;margin-left:0!important;margin-right:0!important}
+html body #tile-video-xHPfjj a.ins-control--button{display:flex!important;justify-content:center!important;width:100%!important;box-sizing:border-box!important;margin:0!important;background:#e8622c!important;border-color:#e8622c!important;color:#0b0b0b!important;font-weight:700!important;letter-spacing:.08em!important;min-height:52px}
+html body #tile-video-xHPfjj a.ins-control--button .ins-control__button{width:100%!important;background:#e8622c!important;border-color:#e8622c!important;box-shadow:none!important}
+html body #tile-video-xHPfjj a.ins-control--button .ins-control__wrap{justify-content:center!important}
+html body #tile-video-xHPfjj a.ins-control--button .ins-control__text{color:#0b0b0b!important;font-weight:700!important;letter-spacing:.08em!important;text-transform:uppercase}
+html body .smsx-sec{padding:40px 0!important}
+html body .smsx-card__img{height:170px!important;background-position:center 30%!important}
+html body .smsx-btns{padding:0!important;display:grid!important;grid-template-columns:1fr!important;gap:10px!important;width:100%!important}
+html body .smsx-btn{display:flex!important;justify-content:center!important;align-items:center!important;width:100%!important;box-sizing:border-box!important;margin:0!important;min-height:52px}
+html body .sms-rates h2,html body .sms-faq h2{font-size:38px!important;line-height:1!important}
+html body .sms-rate-group h3{font-size:24px!important;letter-spacing:.03em!important;color:#e8622c!important;padding-bottom:6px!important}
+}
