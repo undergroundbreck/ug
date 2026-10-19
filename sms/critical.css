@@ -761,10 +761,10 @@ html body .fullscreen-overlay:has(.mobile-site-menu__content) button[class*=back
 .sms-mm__g a.is-sale{border-color:#e8622c;color:#e8622c!important}
 .sms-mm__g a.is-gift{grid-column:1/-1;background:#e8622c;border-color:#e8622c;color:#0b0b0b!important;font-weight:700}
 .sms-mm__g a.is-gift::after{color:#0b0b0b}
-.sms-mm__f{display:block!important;margin:28px 0 0;padding:20px 0 0;border-top:1px solid #262626;font:400 14px/1.5 Inter,system-ui,sans-serif;color:#bdb8ae}
+.sms-mm__f{display:block!important;margin:0!important;padding:0 0 16px!important;border:0!important;border-bottom:1px solid #262626!important;font:400 14px/1.5 Inter,system-ui,sans-serif;color:#bdb8ae}
 .sms-mm__f b{display:block!important;color:#fff;font-weight:700;font-size:15px}
-.sms-mm__btns{display:grid!important;grid-template-columns:1fr 1fr;gap:8px;margin-top:14px}
-.sms-mm__btns a{display:flex;align-items:center;justify-content:center;min-height:48px;font:700 13px/1 Inter,system-ui,sans-serif;letter-spacing:.08em;text-transform:uppercase;text-decoration:none!important;border:2px solid #fff}
+.sms-mm__btns{display:grid!important;padding:0!important;grid-template-columns:1fr 1fr;gap:8px;margin-top:12px}
+.sms-mm__btns a{width:auto!important;max-width:none!important;justify-self:stretch;margin:0!important;display:flex;align-items:center;justify-content:center;min-height:48px;font:700 13px/1 Inter,system-ui,sans-serif;letter-spacing:.08em;text-transform:uppercase;text-decoration:none!important;border:2px solid #fff}
 .sms-mm__btns a.call{background:#fff;color:#0b0b0b!important}
 .sms-mm__btns a.dir{background:transparent;color:#fff!important}
 }
@@ -785,3 +785,5 @@ html body .sms-help{margin:14px 0 4px!important;padding:12px 14px!important;bord
 .sms-sb__p{display:block;font-size:17px;font-weight:700;margin-top:2px;color:#fff}
 .sms-sb__b{flex:none;background:#e8622c;color:#0b0b0b;border:0;border-radius:0;padding:14px 18px;font:700 13px/1 Inter,system-ui,sans-serif;letter-spacing:.06em;text-transform:uppercase;cursor:pointer}
 @media(min-width:769px){.sms-sb{display:none!important}}
+/* Rentals page on phones: booking box fits the first booking step, no empty block under it (10/19/26). Grows once someone starts booking. */
+@media(max-width:600px){html body .sms-rent__embed:not(.is-open){height:560px!important}}
