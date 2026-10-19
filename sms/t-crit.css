@@ -785,3 +785,5 @@ html body .sms-help{margin:14px 0 4px!important;padding:12px 14px!important;bord
 .sms-sb__p{display:block;font-size:17px;font-weight:700;margin-top:2px;color:#fff}
 .sms-sb__b{flex:none;background:#e8622c;color:#0b0b0b;border:0;border-radius:0;padding:14px 18px;font:700 13px/1 Inter,system-ui,sans-serif;letter-spacing:.06em;text-transform:uppercase;cursor:pointer}
 @media(min-width:769px){.sms-sb{display:none!important}}
+/* Rentals page on phones: booking box fits the first booking step, no empty block under it (10/19/26). Grows once someone starts booking. */
+@media(max-width:600px){html body .sms-rent__embed:not(.is-open){height:560px!important}}
