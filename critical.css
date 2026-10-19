@@ -210,3 +210,8 @@ html body .ug-sp__p s{color:#8a8a8a;font-weight:500;margin-left:6px}
 html body .ug-badge{position:absolute;left:8px;bottom:8px;z-index:2;background:#e8622c!important;color:#0b0b0b!important;font:700 11px/1 Inter,system-ui,sans-serif!important;letter-spacing:.1em!important;text-transform:uppercase;padding:6px 8px!important;pointer-events:none;border-radius:0!important}
 html body .ug-badge--pdp{position:static!important;display:inline-block!important;margin:0 0 10px!important}
 @media(max-width:768px){html body .ug-sp{padding:36px 0}html body .ug-sp__in{padding:0 16px}html body .ug-sp__h{font-size:36px!important}html body .ug-sp__row{grid-auto-columns:62%}html body .ug-rate__in{font-size:13px;padding:10px 16px}}
+/* Phones (10/19/26): store inputs at 16px so iPhones don't zoom in when tapping sort, options or checkout fields; top info bar text a touch bigger */
+@media(max-width:768px){
+html body .ec-store select,html body .ec-store textarea,html body .ec-store input:not([type=checkbox]):not([type=radio]):not([type=hidden]){font-size:16px!important}
+html body .key-info-bar a,html body .key-info-bar span{font-size:12.5px!important}
+}

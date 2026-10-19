@@ -17,7 +17,7 @@
   /* 2) Headlines: fluid size + no breaking inside words */
   h1, h2, h3,
   .ec-heading--h1, .ec-heading--h2, .ec-heading--h3,
-  .section-title, .headline, [class*="headline"], [class*="title"] {
+  :is(.section-title, .headline, [class*="headline"], [class*="title"]):not(.ec-store *) {
     font-size: clamp(28px, 7vw, 42px);
     line-height: 1.1 !important;
     word-break: keep-all !important;
@@ -27,8 +27,9 @@
   }
 
   /* 3) Buttons: allow wrapping instead of clipping */
-  .btn, .button, .ec-button, button, a.ec-link--button,
-  [class*="btn"], [class*="button"] {
+  /* (10/19/26) kept off the store's own product, cart and checkout buttons: it doubled their padding and pushed Checkout off center */
+  :is(.btn, .button, .ec-button, button, a.ec-link--button,
+  [class*="btn"], [class*="button"]):not(.ec-store *):not(.ec-store) {
     display: inline-flex !important;
     align-items: center !important;
     justify-content: center !important;
@@ -830,3 +831,10 @@ html body .sms-sp__p s{color:#8a8a8a;font-weight:500;margin-left:6px}
 html body .sms-badge{position:absolute;left:8px;bottom:8px;z-index:2;background:#e8622c!important;color:#0b0b0b!important;font:700 11px/1 Inter,system-ui,sans-serif!important;letter-spacing:.1em!important;text-transform:uppercase;padding:6px 8px!important;pointer-events:none;border-radius:0!important}
 html body .sms-badge--pdp{position:static!important;display:inline-block!important;margin:0 0 10px!important}
 @media(max-width:768px){html body .sms-sp{padding:36px 0}html body .sms-sp__in{padding:0 16px}html body .sms-sp__h{font-size:36px!important}html body .sms-sp__row{grid-auto-columns:62%}html body .sms-rate__in{font-size:13px;padding:10px 16px}}
+/* Homepage hero title is the page H1 (10/19/26). It carries .sms-intro only so the Intro Band H1 script skips it; undo that class's band styling here. */
+html body .sms-hero .sms-h1keep{background:none!important;padding:0!important;text-align:inherit!important}
+/* Phones (10/19/26): store inputs at 16px so iPhones don't zoom in when tapping sort, options or checkout fields; top info bar text a touch bigger */
+@media(max-width:768px){
+html body .ec-store select,html body .ec-store textarea,html body .ec-store input:not([type=checkbox]):not([type=radio]):not([type=hidden]){font-size:16px!important}
+html body .key-info-bar a,html body .key-info-bar span{font-size:12.5px!important}
+}
