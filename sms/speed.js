@@ -41,3 +41,34 @@ __smsReady(function(){
 /* BreadcrumbList schema (10/20/26): on category and product pages, builds JSON-LD from the visible breadcrumb (Home / Store / Category / ... / Product) with absolute URLs. Runs after hydration and follows page changes. */
 !function(){if(window.__bcLd)return;window.__bcLd=1;var q=0;function run(){q=0;var s=document.getElementById("bc-ld"),pb=document.querySelector(".ecwid-productBrowser"),b=document.querySelector(".ec-breadcrumbs"),c=pb?pb.className:"",isP=/ProductPage/.test(c),isC=/CategoryPage/.test(c);if(!b||!(isP||isC)||!/^\/products/.test(location.pathname)){s&&s.remove();return}var O=location.origin,it=[],seen={};[].forEach.call(b.querySelectorAll("a[href]"),function(a){var n=a.textContent.replace(/\s+/g," ").trim(),h=a.getAttribute("href")||"";if(!n)return;var u=/^\/?(en)?\/?$/.test(h)?O+"/":new URL(h,O).href.split(/[?#]/)[0];if(seen[u])return;seen[u]=1;it.push([n,u])});var here=O+location.pathname.replace(/\/$/,"");if(isP){var t=document.querySelector(".product-details__product-title");if(!t)return;if(!seen[here])it.push([t.textContent.replace(/\s+/g," ").trim(),here])}else if(!it.length||it[it.length-1][1]!==here)return;if(it.length<2)return;var j=JSON.stringify({"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":it.map(function(x,i){return{"@type":"ListItem","position":i+1,"name":x[0],"item":x[1]}})});if(!s){s=document.createElement("script");s.type="application/ld+json";s.id="bc-ld";document.head.appendChild(s)}if(s.textContent!==j)s.textContent=j}new MutationObserver(function(){if(!q){q=1;setTimeout(run,250)}}).observe(document.body,{childList:!0,subtree:!0});run()}();
 });
+
+/* Checkout delivery estimate: every order ships the next business day (Mon-Fri, skips major holidays), then carrier transit. */
+!function(){if(window.__ecEta)return;window.__ecEta=1;
+var M=[
+ [/next day air/i,1,1,0],
+ [/2nd day air/i,2,2,0],
+ [/3 day select/i,3,3,0],
+ [/ups ground|ground \(ups\)/i,1,5,0],
+ [/priority mail express/i,1,2,1],
+ [/priority mail/i,1,3,1],
+ [/ground advantage/i,2,5,1]
+];
+function today(){var p=new Intl.DateTimeFormat("en-US",{timeZone:"America/Denver",year:"numeric",month:"numeric",day:"numeric"}).formatToParts(new Date()),o={};p.forEach(function(x){o[x.type]=x.value});return new Date(+o.year,o.month-1,+o.day)}
+function nth(y,m,dow,n){var d=new Date(y,m,1),c=0;while(true){if(d.getDay()===dow&&++c===n)return d;d.setDate(d.getDate()+1)}}
+function lastMon(y,m){var d=new Date(y,m+1,0);while(d.getDay()!==1)d.setDate(d.getDate()-1);return d}
+function hol(d){var y=d.getFullYear(),k=function(x){return x.getMonth()+"-"+x.getDate()},s=[k(new Date(y,0,1)),k(lastMon(y,4)),k(new Date(y,6,4)),k(nth(y,8,1,1)),k(nth(y,10,4,4)),k(new Date(y,11,25))];return s.indexOf(k(d))>-1}
+function next(d,sat){d=new Date(d);do{d.setDate(d.getDate()+1)}while(d.getDay()===0||(!sat&&d.getDay()===6)||hol(d));return d}
+function add(d,n,sat){for(var i=0;i<n;i++)d=next(d,sat);return d}
+function f(d){return d.toLocaleDateString("en-US",{weekday:"short",month:"short",day:"numeric"})}
+function est(t){for(var i=0;i<M.length;i++)if(M[i][0].test(t)){var r=M[i],s=next(today(),0),a=add(s,r[1],r[3]),b=add(s,r[2],r[3]);return"Ships "+f(s)+" · Arrives "+(r[1]===r[2]?f(a):f(a)+" to "+f(b))}return""}
+function run(){var root=document.querySelector(".ec-store, .ecwid-checkout, .ec-cart");if(!root)return;
+ root.querySelectorAll(".ec-radiogroup__item, .ec-radiogroup label, label.form-control__radio-wrap").forEach(function(it){
+  var tEl=it.querySelector(".ec-radiogroup__title")||it,t=(tEl.textContent||"").replace(/Ships .*$/,"");
+  var e=est(t);if(!e)return;var x=it.querySelector(".ec-eta");
+  if(x){if(x.textContent!==e)x.textContent=e;return}
+  x=document.createElement("div");x.className="ec-eta";x.textContent=e;
+  x.style.cssText="font-size:12px;line-height:1.4;margin-top:3px;opacity:.75";
+  (it.querySelector(".ec-radiogroup__info")||tEl.parentNode||it).appendChild(x)})}
+var q;function sch(){clearTimeout(q);q=setTimeout(run,150)}
+new MutationObserver(function(){if(/checkout|cart/i.test(location.href+document.body.className))sch()}).observe(document.documentElement,{childList:!0,subtree:!0});
+window.__ecEtaTest=est}();
