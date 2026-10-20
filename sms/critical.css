@@ -969,17 +969,17 @@ html body .sms-activity-cta{font-size: 9px !important;
 html body .sms-activity-sub{display: none !important;}
 
   }
-html body .sms-rent{background:#f4f1ea;color:#121614;padding:48px 24px}
-html body .sms-rent__wrap{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1.3fr 1fr;gap:32px;align-items:center}
-html body .sms-rent__eyebrow{margin:0 0 8px;font-size:13px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#e8622c}
-html body .sms-rent h2{margin:0 0 12px;font-weight:400;font-size:clamp(28px,3.6vw,42px);line-height:1.05;text-transform:uppercase;color:#121614}
-html body .sms-rent p{margin:0;font-size:16px;line-height:1.6;color:#333}
-html body .sms-rent__price{background:#121614;color:#fff;border-radius:6px;padding:28px;text-align:center}
-html body .sms-rent__price strong{display:block;font-size:44px;line-height:1;color:#e8622c;margin-bottom:6px}
-html body .sms-rent__price span{display:block;font-size:14px;letter-spacing:.08em;text-transform:uppercase;color:#d9d9d9;margin-bottom:18px}
-html body .sms-rent__btn{display:inline-block;padding:14px 28px;border-radius:4px;font-weight:700;font-size:15px;letter-spacing:.06em;text-transform:uppercase;text-decoration:none!important;background:#e8622c;color:#121614!important}
-html body .sms-rent__btn:hover{background:#ff9a3d}
-@media(max-width:767px){html body .sms-rent__wrap{grid-template-columns:1fr}}
+html body #rentals.sms-rent{background:#f4f1ea;color:#121614;padding:48px 24px}
+html body #rentals .sms-rent__wrap{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1.3fr 1fr;gap:32px;align-items:center}
+html body #rentals .sms-rent__eyebrow{margin:0 0 8px;font-size:13px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#e8622c}
+html body #rentals.sms-rent h2{margin:0 0 12px;font-weight:400;font-size:clamp(28px,3.6vw,42px);line-height:1.05;text-transform:uppercase;color:#121614}
+html body #rentals.sms-rent p{margin:0;font-size:16px;line-height:1.6;color:#333}
+html body #rentals .sms-rent__price{background:#121614;color:#fff;border-radius:6px;padding:28px;text-align:center}
+html body #rentals .sms-rent__price strong{display:block;font-size:44px;line-height:1;color:#e8622c;margin-bottom:6px}
+html body #rentals .sms-rent__price span{display:block;font-size:14px;letter-spacing:.08em;text-transform:uppercase;color:#d9d9d9;margin-bottom:18px}
+html body #rentals .sms-rent__btn{display:inline-block;padding:14px 28px;border-radius:4px;font-weight:700;font-size:15px;letter-spacing:.06em;text-transform:uppercase;text-decoration:none!important;background:#e8622c;color:#121614!important}
+html body #rentals .sms-rent__btn:hover{background:#ff9a3d}
+@media(max-width:767px){html body #rentals .sms-rent__wrap{grid-template-columns:1fr}}
 html body .sms-hl{background:#fff;color:#0b0b0b;font-family:'Inter',system-ui,sans-serif}
 html body .sms-hl *{box-sizing:border-box}
 html body .sms-hl h2,html body .sms-hl .sms-hl__t{font-family:'Bebas Neue',Impact,sans-serif;font-weight:400;text-transform:uppercase;line-height:.95;letter-spacing:.02em;margin:0 0 14px}
@@ -1051,3 +1051,32 @@ html body .sms-hero{background-position:70% 70%!important}
 html body .sms-cat>li.sms-gift>a{color:#fff!important}
 html body .sms-cat>li.sms-gift>a:after{display:none!important}
 html body .sms-cat>li.sms-gift>a:hover{color:#e8622c!important}
+
+
+/* 10/20/26 fixes: menu type matches UG, customer care layout, rentals page polish, ski shop tunes photo, rates gap */
+@media(min-width:1200px){
+html body #ec-instantsite .header-top-row .navigation-menu__list a,html body #ec-instantsite .header-top-row .navigation-menu__item{font-size:13px!important;letter-spacing:.1em!important}
+html body .sms-cat>li>a{font-size:13px!important;letter-spacing:.1em!important;padding:0 10px!important;gap:0!important;height:46px!important}
+html body .sms-cat>li>a:after{content:""!important;display:inline-block!important;width:6px!important;height:6px!important;border:0!important;border-left:1.5px solid currentColor!important;border-top:1.5px solid currentColor!important;transform:translateY(2px) rotate(45deg)!important;margin-left:8px!important;opacity:1!important;font-size:0!important}
+html body .sms-cat>li.sms-nodd>a:after,html body .sms-cat>li.sms-gift>a:after{display:none!important}
+}
+@media(min-width:1200px) and (max-width:1499px){
+html body #ec-instantsite .header-top-row .navigation-menu__list a,html body #ec-instantsite .header-top-row .navigation-menu__item{font-size:12px!important;letter-spacing:.06em!important}
+html body .sms-cat>li>a{font-size:12px!important;letter-spacing:.06em!important;padding:0 8px!important}
+html body .sms-cat>li>a:after{margin-left:6px!important}
+}
+@media(min-width:900px){
+html body #ec-instantsite .customer-care{gap:80px!important;justify-content:center!important;padding:40px max(32px,calc((100% - 1120px)/2)) 48px!important}
+html body #ec-instantsite .customer-care__info-column{flex:0 1 380px!important;min-width:0}
+html body #ec-instantsite .customer-care__form-column{flex:1 1 560px!important;max-width:640px!important;min-width:0}
+}
+html body .smsx-card__img[style*="v2ofEt7"]{background-image:url(https://undergroundbreck.github.io/ug/sms/ski-tune-800.webp)!important;background-size:cover!important;background-position:50% 45%!important}
+html body .sms-rate-grid{display:block!important;columns:2 320px;column-gap:48px}
+html body .sms-rate-group{display:inline-block;width:100%;break-inside:avoid;margin:0 0 32px}
+html body #backcountry-rentals .sms-rent__rates{gap:18px}
+@media(min-width:1000px){html body #backcountry-rentals .sms-rent__rates{grid-template-columns:repeat(4,1fr)}}
+@media(min-width:600px) and (max-width:999px){html body #backcountry-rentals .sms-rent__rates{grid-template-columns:repeat(2,1fr)}}
+html body #backcountry-rentals .sms-rent__rate{display:flex;flex-direction:column;box-shadow:0 1px 0 rgba(18,22,20,.06),0 8px 24px rgba(18,22,20,.06)}
+html body #backcountry-rentals .sms-rent__rate li{align-items:baseline}
+html body #backcountry-rentals .sms-rent__rate b{font-variant-numeric:tabular-nums;font-size:16px}
+html body #backcountry-rentals .sms-rent__note{max-width:760px}
