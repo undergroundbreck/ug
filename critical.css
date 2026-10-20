@@ -335,4 +335,12 @@ html body #ec-instantsite .customer-care__form-column{flex:1 1 560px!important;m
 @media(max-width:860px){.ugx-story,.ugx-locals,.ugx-visit{grid-template-columns:1fr}.ugx-stats{grid-template-columns:repeat(2,1fr)}.ugx-stat:nth-child(2){border-right:0}.ugx-stat:nth-child(-n+2){border-bottom:2px solid #0b0b0b}.ugx-cards{grid-template-columns:1fr}.ugx-skel{opacity:.12;width:90vw;right:-30vw}.ugx-locals__art{max-width:320px}}
 @media(max-width:600px){.ugx-wrap{padding:0 16px}.ugx-hero{padding:64px 0 72px}.ugx-sec{padding:52px 0}.ugx-lede{font-size:17px}.ugx-stamp{left:8px}.ugx-tick span{font-size:21px}}
 @media(prefers-reduced-motion:reduce){.ugx-tick__row,.ug-rent__hero::before,.ug-svc__hero::before,.ug-lb .ug-lb-dark:first-child::before,.ugx-hero::before{animation:none!important}.ug-rent__hero .ug-rent__wrap>*,.ug-svc__hero .ug-svc__wrap>*,.ug-lb .ug-lb-dark:first-child .ug-lb-wrap>*,.ugx-hero .ugx-wrap>*,.ug-svc__card,.ug-rent__card,.ug-lb-guide,.ug-rent__deal,.ugx-card,.ug-svc__steps li,.ug-rent__steps li,.ug-lb-date{animation:none!important}}
+
+/* UGX v1.1 fixes */
+.ugx-hero .ugx-skel{display:none}
+.ugx-hero__photo{opacity:.55!important}
+.ugx-hero::after{background:linear-gradient(90deg,rgba(11,11,11,.92) 0%,rgba(11,11,11,.72) 45%,rgba(11,11,11,.35) 100%),radial-gradient(60% 80% at 100% 100%,rgba(232,98,44,.35),transparent 60%)!important}
+.ugx-hero .ugx-o{color:#e8622c!important;-webkit-text-stroke:0}
+#ec-instantsite .ugx-dark p.ugx-eyebrow,#ec-instantsite .ugx p.ugx-eyebrow{color:#e8622c!important;font-size:13px!important}
+.ugx-locals__art{mix-blend-mode:screen}
 /* ===== end UGX v1 ===== */
