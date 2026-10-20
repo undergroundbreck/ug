@@ -1080,3 +1080,40 @@ html body #backcountry-rentals .sms-rent__rate{display:flex;flex-direction:colum
 html body #backcountry-rentals .sms-rent__rate li{align-items:baseline}
 html body #backcountry-rentals .sms-rent__rate b{font-variant-numeric:tabular-nums;font-size:16px}
 html body #backcountry-rentals .sms-rent__note{max-width:760px}
+
+/* ===== SMSG 10/20/26: About, Demos, Ski Shop upgrade (SMS version of the UG page layer): topo map + grain heroes, trail-sign ticker, lift-on-hover cards, scroll reveals ===== */
+@keyframes smsg-rise{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+@keyframes smsg-drift{from{background-position:0 0,0 0}to{background-position:640px 320px,180px 180px}}
+@keyframes smsg-tick{to{transform:translateX(-50%)}}
+.sms-rent__hero{isolation:isolate}
+.sms-rent__hero::before{content:"";position:absolute;inset:0;z-index:-1;background:url(../topo.svg),url(../grain.svg);background-size:640px 640px,180px 180px;animation:smsg-drift 120s linear infinite;pointer-events:none}
+.sms-rent__hero::after{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(55% 80% at 100% 0,rgba(232,98,44,.22),transparent 60%),radial-gradient(50% 70% at 0 100%,rgba(90,120,100,.18),transparent 70%);pointer-events:none}
+.smsx-hero::after{content:"";position:absolute;inset:0;background:url(../topo.svg),url(../grain.svg);background-size:640px 640px,180px 180px;pointer-events:none;animation:smsg-drift 120s linear infinite}
+.smsx-hero .smsx-in{z-index:1}
+.smsg-hi{color:#e8622c}
+.sms-rent__hero .sms-rent__wrap>*,.smsx-hero .smsx-in>*{animation:smsg-rise .7s cubic-bezier(.2,.7,.2,1) both}
+.sms-rent__hero .sms-rent__wrap>*:nth-child(2),.smsx-hero .smsx-in>*:nth-child(2){animation-delay:.08s}
+.sms-rent__hero .sms-rent__wrap>*:nth-child(3),.smsx-hero .smsx-in>*:nth-child(3){animation-delay:.16s}
+.sms-rent__hero .sms-rent__wrap>*:nth-child(n+4),.smsx-hero .smsx-in>*:nth-child(n+4){animation-delay:.24s}
+/* ticker: flat trail-sign strip */
+.smsg-tick{background:#e8622c;color:#121614;overflow:hidden;white-space:nowrap;border-top:3px solid #121614;border-bottom:3px solid #121614;position:relative;z-index:2}
+.smsg-tick__row{display:inline-flex;animation:smsg-tick 45s linear infinite}
+.smsg-tick span{font-family:'Bebas Neue',Impact,sans-serif;font-size:24px;line-height:1;padding:11px 0;letter-spacing:.05em;text-transform:uppercase}
+.smsg-tick span::after{content:"\25B2";margin:0 22px;font-size:12px;vertical-align:5px}
+.smsg-tick:hover .smsg-tick__row{animation-play-state:paused}
+/* cards */
+.smsx-card,.sms-rent__card,.sms-rent__rate,.smsb-tile{transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease}
+.smsx-card:hover,.sms-rent__rate:hover{transform:translate(-4px,-4px);box-shadow:6px 6px 0 #e8622c;position:relative;z-index:2}
+.sms-rent__card:hover{transform:translateY(-4px);border-color:#e8622c;box-shadow:0 10px 0 -4px #e8622c}
+.smsb-tile:hover{box-shadow:inset 0 -4px 0 #e8622c}
+.smsx-card__img{transition:transform .4s ease,filter .4s ease}
+.smsx-card{overflow:hidden}
+.smsx-card:hover .smsx-card__img{transform:scale(1.05);filter:saturate(1.15)}
+a.smsx-btn,a.sms-rent__btn,a.sms-visit__btn{transition:transform .15s ease,box-shadow .15s ease}
+a.smsx-btn:hover,a.sms-rent__btn:hover,a.sms-visit__btn:hover{transform:translate(-2px,-2px);box-shadow:4px 4px 0 #121614}
+.smsx-hero a.smsx-btn:hover,.sms-rent__hero a.sms-rent__btn:hover{box-shadow:4px 4px 0 #f4f1ea}
+.sms-rent__steps li::before{color:transparent!important;-webkit-text-stroke:1.5px #e8622c;font-size:64px!important}
+@supports (animation-timeline:view()){.smsx-card,.sms-rent__card,.sms-rent__rate,.sms-rent__steps li,.sms-rate-group{animation:smsg-rise linear both;animation-timeline:view();animation-range:entry 0% entry 35%}}
+@media(max-width:600px){.smsg-tick span{font-size:20px;padding:9px 0}}
+@media(prefers-reduced-motion:reduce){.smsg-tick__row,.sms-rent__hero::before,.smsx-hero::after,.sms-rent__hero .sms-rent__wrap>*,.smsx-hero .smsx-in>*,.smsx-card,.sms-rent__card,.sms-rent__rate,.sms-rent__steps li,.sms-rate-group{animation:none!important}}
+/* ===== end SMSG ===== */
