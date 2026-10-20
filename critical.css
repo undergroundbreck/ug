@@ -365,3 +365,5 @@ html body a.ug-rate__a{padding:9px 0;margin:-9px 0}
 html body .ug-gc__sub{font-size:12px}
 }
 /* ===== end tap targets ===== */
+
+/* iPhone search fix 10/20/26: pin the search field to the top of the overlay so the keyboard never covers it (was vertically centered). */html body .search-overlay{align-items:flex-start!important;padding-top:20px!important}
