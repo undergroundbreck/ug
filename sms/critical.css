@@ -1044,3 +1044,10 @@ html body .sms-visit__info{padding:96px 56px}
 html body .sms-visit__map,html body .sms-visit__map img{min-height:520px}}
 
 
+/* Homepage fold + header (10/19/26 evening): hero sized so the Google rating and brand strip sit above the fold, image nudged up so the skiers aren't cut off, bigger even menu type on wide screens, both menu rows centered, white Gift Cards link after Sale (added by speed.js) */
+html body .sms-hero{background-position:70% 70%!important}
+@media(min-width:761px){html body .sms-hero__inner{min-height:clamp(460px,calc(100vh - 300px),820px)!important}}
+@media(min-width:1600px){html body .sms-cat>li>a{font-size:14px!important;letter-spacing:.08em!important;padding:0 12px!important}html body #ec-instantsite .header-top-row .navigation-menu__list a,html body #ec-instantsite .header-top-row .navigation-menu__item{font-size:14px!important;letter-spacing:.08em!important}html body #ec-instantsite .header-top-row .navigation-menu__list{left:50%!important}}
+html body .sms-cat>li.sms-gift>a{color:#fff!important}
+html body .sms-cat>li.sms-gift>a:after{display:none!important}
+html body .sms-cat>li.sms-gift>a:hover{color:#e8622c!important}

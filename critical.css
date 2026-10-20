@@ -231,3 +231,6 @@ html body #tile-custom-R55hDK,html body #tile-custom-PKpwkr{order:2!important}
 html body [id^=tile-contact-us-] button.section__button,html body [id^=tile-contact-us-] button.section__button *{color:#fff!important}
 /* Klaviyo popup hidden while shopping a product, cart or checkout (class set by hd.js, 10/19/26) */
 html.ug-buying body > div:has([aria-label="POPUP Form"]){display:none!important}
+/* UG header (10/19/26 evening): center both menu rows on the page; search pinned right */
+@media(min-width:1500px){html body #ec-instantsite .header-top-row{position:relative!important}html body #ec-instantsite .header-top-row__left .navigation-menu__list{position:absolute!important;left:50%!important;top:50%!important;transform:translate(-50%,-50%)!important;margin:0!important;flex:none!important}html body #ec-instantsite .header-bottom-row{position:relative!important}html body #ec-instantsite .header-bottom-row__left{padding-left:0!important;padding-right:0!important;justify-content:center!important;width:100%!important;flex:1 1 100%!important}html body #ec-instantsite .header-bottom-row__right{position:absolute!important;right:0!important;top:50%!important;transform:translateY(-50%)!important}}
+@media(min-width:1500px) and (max-width:1599px){html body #ec-instantsite .custom-header .header-bottom-row__right .search.search--full{width:180px!important}}
