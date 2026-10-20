@@ -1129,7 +1129,8 @@ html body .mobile-header__bottom .search--full,html body .legal-items a,html bod
 html body .mobile-header__bottom .search--full::before,html body .legal-items a::before,html body .link-body a::before,html body .contact-me-info a::before{content:"";position:absolute;left:0;right:0;top:50%;height:44px;transform:translateY(-50%)}
 }
 @media (max-width:768px){
-html body .key-info-bar a{padding:10px 0;margin:-8px 0 -10px}
+html body .key-info-bar a{position:relative}
+html body .key-info-bar a::before{content:"";position:absolute;left:0;right:0;top:50%;height:44px;transform:translateY(-50%)}
 html body .mobile-header__catalog-btn{padding:9px 0 13px;margin:-9px 0}
 html body a.sms-ng__all{padding:6px 0 10px;margin:-6px 0}
 html body a.sms-rate__a{padding:9px 0;margin:-9px 0}
