@@ -1117,3 +1117,24 @@ a.smsx-btn:hover,a.sms-rent__btn:hover,a.sms-visit__btn:hover{transform:translat
 @media(max-width:600px){.smsg-tick span{font-size:20px;padding:9px 0}}
 @media(prefers-reduced-motion:reduce){.smsg-tick__row,.sms-rent__hero::before,.smsx-hero::after,.sms-rent__hero .sms-rent__wrap>*,.smsx-hero .smsx-in>*,.smsx-card,.sms-rent__card,.sms-rent__rate,.sms-rent__steps li,.sms-rate-group{animation:none!important}}
 /* ===== end SMSG ===== */
+/* ===== Tap targets on phones (10/20/26): bigger hit areas using padding offset by negative margin, so nothing moves on screen ===== */
+@media (max-width:768px){
+html body .ec-breadcrumbs a.breadcrumbs__link{padding:12px 0}
+html body .cart .navigation-link a{padding:10px 6px;margin:-10px -6px}
+html body .legal-social-container .social-links a.social-icon{padding:12px;margin:-12px}
+html body .copyright-section a.powered-by{padding:11px 0;margin:-11px 0}
+html body .mobile-header__bottom .search--full,html body .legal-items a,html body .link-body a,html body .contact-me-info a{position:relative}
+html body .mobile-header__bottom .search--full::before,html body .legal-items a::before,html body .link-body a::before,html body .contact-me-info a::before{content:"";position:absolute;left:0;right:0;top:50%;height:44px;transform:translateY(-50%)}
+}
+@media (max-width:768px){
+html body .key-info-bar a{padding:10px 0;margin:-8px 0 -10px}
+html body .mobile-header__catalog-btn{padding:9px 0 13px;margin:-9px 0}
+html body a.sms-ng__all{padding:6px 0 10px;margin:-6px 0}
+html body a.sms-rate__a{padding:9px 0;margin:-9px 0}
+html body .sms-ng__brand{font-size:12px}
+html body .sms-activity-title,html body .sms-activity-cta{font-size:12px!important}
+}
+/* ===== end tap targets ===== */
+/* ===== Hero image by screen size (10/20/26): phones get a 1600px image, laptops 2000px, big screens keep 2400px. The SMS head code preloads the same file on the homepage. Position unchanged. ===== */
+@media (max-width:760px){html body .sms-hero{background-image:url("https://images.unsplash.com/photo-1643358598688-2e829316d96f?w=1600&q=75&auto=format&fit=crop")}}
+@media (min-width:761px) and (max-width:1280px){html body .sms-hero{background-image:url("https://images.unsplash.com/photo-1643358598688-2e829316d96f?w=2000&q=75&auto=format&fit=crop")}}

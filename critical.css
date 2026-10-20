@@ -344,3 +344,24 @@ html body #ec-instantsite .customer-care__form-column{flex:1 1 560px!important;m
 #ec-instantsite .ugx-dark p.ugx-eyebrow,#ec-instantsite .ugx p.ugx-eyebrow{color:#e8622c!important;font-size:13px!important}
 .ugx-locals__art{mix-blend-mode:screen}
 /* ===== end UGX v1 ===== */
+
+/* ===== Tap targets on phones (10/20/26): bigger hit areas using padding offset by negative margin, so nothing moves on screen ===== */
+@media (max-width:768px){
+html body .ec-breadcrumbs a.breadcrumbs__link{padding:12px 0}
+html body .cart .navigation-link a{padding:10px 6px;margin:-10px -6px}
+html body .legal-social-container .social-links a.social-icon{padding:12px;margin:-12px}
+html body .copyright-section a.powered-by{padding:11px 0;margin:-11px 0}
+html body .mobile-header__bottom .search--full,html body .legal-items a,html body .link-body a,html body .contact-me-info a{position:relative}
+html body .mobile-header__bottom .search--full::before,html body .legal-items a::before,html body .link-body a::before,html body .contact-me-info a::before{content:"";position:absolute;left:0;right:0;top:50%;height:44px;transform:translateY(-50%)}
+}
+@media (max-width:768px){
+html body .key-info-bar a{padding:14px 0}
+html body .mobile-header__menu-toggle{padding:14px;margin:-10px}
+html body .mobile-header__catalog-btn{padding:14px 0 12px;margin:-6px 0}
+html body .ug-ft-q a{padding:14px 0;margin:-14px 0}
+html body a.ug-ft-l{padding:14px 0;margin:-14px 0 2px}
+html body .ug-picks-h a{padding:14px 0;margin:-14px 0}
+html body a.ug-rate__a{padding:9px 0;margin:-9px 0}
+html body .ug-gc__sub{font-size:12px}
+}
+/* ===== end tap targets ===== */
