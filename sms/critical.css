@@ -312,6 +312,8 @@ html {
 
 /* Logo fit: header */
 #ec-instantsite .header-container,#ec-instantsite .header-top-row{height:auto!important;min-height:68px!important}
+/* 10/20/26: second nav row was held at 68px, leaving a dead strip above the page hero. Size it to its links like UG. */
+html body #ec-instantsite .navigation-menu-spacer + .header-container{min-height:0!important;padding-bottom:8px!important}
 #ec-instantsite .header-top-row{padding:14px 0!important}
 #ec-instantsite .logo-link,#ec-instantsite .logo-link__image{height:auto!important;display:flex!important;align-items:center!important}
 #ec-instantsite .logo-link__image-content{height:40px!important;max-height:40px!important;width:auto!important;object-fit:contain!important}
