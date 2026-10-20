@@ -1143,3 +1143,4 @@ html body .sms-activity-title,html body .sms-activity-cta{font-size:12px!importa
 @media (min-width:761px) and (max-width:1280px){html body .sms-hero{background-image:url("https://images.unsplash.com/photo-1643358598688-2e829316d96f?w=2000&q=75&auto=format&fit=crop")}}
 
 /* iPhone search fix 10/20/26: pin the search field to the top of the overlay so the keyboard never covers it (was vertically centered). */html body .search-overlay{align-items:flex-start!important;padding-top:20px!important}
+/* 10/20/26: Featured Products titles are retagged p to h2 by the site script so an H2 sits above the product H3s; keep the old spacing */#ec-instantsite h2.head-text{margin:0!important}
