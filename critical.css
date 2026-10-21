@@ -470,3 +470,7 @@ html body #ec-instantsite .ug-kib>.ug-kib-sep{display:none!important}
 .fullscreen-overlay .mobile-site-menu__content .navigation-menu__list>li:has(a[href="/local-beta"]){order:3}
 .fullscreen-overlay .mobile-site-menu__content .navigation-menu__list>li:has(a[href="/locals-day"]){order:4}
 html body .fullscreen-overlay .mobile-site-menu__content .navigation-menu__list a[href="/locals-day"],html body .fullscreen-overlay .mobile-site-menu__content .navigation-menu__list a[href="/locals-day"] *{color:#e8622c!important}
+/* 10/21/26 phone menu: tighter Explore rows so Locals Day shows without scrolling */
+.fullscreen-overlay .mobile-site-menu__content .navigation-menu__list{gap:0!important;row-gap:0!important;margin-top:0!important;padding-top:0!important}
+.fullscreen-overlay .mobile-site-menu__content .navigation-menu__list>li{margin:0!important;padding:0!important}
+.fullscreen-overlay .mobile-site-menu__content .navigation-menu__list>li a{padding:9px 0!important;font-size:24px!important;line-height:1.1!important}
