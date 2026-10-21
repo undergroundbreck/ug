@@ -409,3 +409,6 @@ html body .ug-gc__sub{font-size:12px}
 .ugm-ch{width:7px;height:7px;border-right:1.6px solid currentColor;border-top:1.6px solid currentColor;transform:rotate(45deg);flex:0 0 7px}
 .ugm-sub{display:none;position:absolute;left:100%;top:-12px;min-width:210px;margin:0;padding:12px 0;list-style:none;background:#1b1b1b;border:1px solid #2c2c2c;box-shadow:0 10px 24px rgba(0,0,0,.35)}
 .ugm-has:hover>.ugm-sub,.ugm-has:focus-within>.ugm-sub{display:block}
+/* 10/21/26 announcement bar moved under the category menu (Milo style), logo grey with black text, Book demos link orange; header stays whole when sticky */
+#ec-instantsite header.custom-header{flex-direction:column}#ec-instantsite header.custom-header>.key-info-bar{order:10!important}
+html body #ec-instantsite .key-info-bar{background:#e0e0e0!important;color:#0b0b0b!important;border:0!important}html body #ec-instantsite .key-info-bar *{color:#0b0b0b!important}html body #ec-instantsite .key-info-bar a,html body #ec-instantsite .key-info-bar a *{color:#e8622c!important;font-weight:700!important}
