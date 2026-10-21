@@ -1182,3 +1182,5 @@ html body #ec-instantsite .hd-ic svg,html body #ec-instantsite .hd-ic svg *{fill
 @media(min-width:768px){html body #ec-instantsite .header-bottom-row__right .search,html body #ec-instantsite .header-bottom-row .search--full{display:none!important}}
 html body #ec-instantsite [id^="tile-custom-header"] header.custom-header>.key-info-bar{display:none!important}
 html body #ec-instantsite .ug-kib{display:block!important;position:relative;z-index:1;background:#e0e0e0!important;color:#0b0b0b!important;text-align:center}html body #ec-instantsite .ug-kib *{color:#0b0b0b!important}html body #ec-instantsite .ug-kib a,html body #ec-instantsite .ug-kib a *,html body #ec-instantsite .ug-kib .ug-ship,html body #ec-instantsite .ug-kib .ug-ship *{color:#e8622c!important;font-weight:700!important}
+/* 10/21/26 search bar off on desktop (beats the older .custom-header rule) */
+@media(min-width:768px){html body #ec-instantsite .custom-header .header-bottom-row__right .search.search--full{display:none!important}}
