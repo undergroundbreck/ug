@@ -1255,3 +1255,56 @@ html body .sms-rent__wrap,html body .lbx-hero__in,html body .smsb,html body .sms
 html body .sms-rates{max-width:1400px!important}
 html.sms-ph .smsx-hero{min-height:0!important;height:auto!important}html.sms-ph .smsx-hero .smsx-in{padding-top:26px!important;padding-bottom:26px!important;min-height:0!important}html.sms-ph .smsx-hero .smsx-stats{margin-top:0!important}
 html.sms-ph .lbx-hero{padding-bottom:84px!important}html.sms-ph .lbx-hero .lbx-hero__in{padding-top:0!important;min-height:0!important}
+/* 10/21/26 SMS footer matches UG (built in speed.js) */
+html body #ec-instantsite .footer-wrapper.sms-h-ft .link-container,html body #ec-instantsite .footer-wrapper.sms-h-ft .social-links,html body #ec-instantsite .footer-wrapper.sms-h-ft .footer-top-border{display:none!important}
+html body #ec-instantsite .footer-wrapper{display:flex!important;flex-direction:column!important;background:#0b0b0b!important}
+html body #ec-instantsite .footer-wrapper>.sms-ft{order:1}html body #ec-instantsite .footer-wrapper>footer{order:2;background:#0b0b0b!important}
+html body #ec-instantsite .footer-wrapper .sms-ft{width:100%;max-width:1240px;margin:0 auto;padding:56px 24px 8px;box-sizing:border-box;color:#bdbdbd!important;font-family:Inter,Arial,sans-serif}
+html body #ec-instantsite .footer-wrapper .sms-ft-c{display:grid;grid-template-columns:repeat(4,1fr);gap:40px}
+html body #ec-instantsite .footer-wrapper .sms-ft-col{border-top:2px solid #e8622c;padding-top:18px}
+html body #ec-instantsite .footer-wrapper .sms-ft h4{font:400 28px/1 'Bebas Neue','Oswald',Impact,sans-serif!important;letter-spacing:.03em;color:#fff!important;margin:0 0 14px!important;text-transform:uppercase}
+html body #ec-instantsite .footer-wrapper .sms-ft p{color:#bdbdbd!important;font-size:15px!important;line-height:1.55;margin:0 0 12px!important;text-align:left}
+html body #ec-instantsite .footer-wrapper .sms-ft a{color:#fff!important;text-decoration:none!important}
+html body #ec-instantsite .footer-wrapper .sms-ft a:hover{color:#e8622c!important}
+html body #ec-instantsite .footer-wrapper .sms-ft-l{display:inline-block;font:700 12px/1 Inter,Arial,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#e8622c!important;margin-bottom:16px}
+html body #ec-instantsite .footer-wrapper .sms-ft-h{display:flex;justify-content:space-between;gap:12px;border-bottom:1px solid #222;padding-bottom:10px}
+html body #ec-instantsite .footer-wrapper .sms-ft-h span{color:#9a9a9a!important}html body #ec-instantsite .footer-wrapper .sms-ft-h b{color:#fff!important;font-weight:600}
+html body #ec-instantsite .footer-wrapper .sms-ft-so{display:flex;gap:12px;margin-top:18px}
+html body #ec-instantsite .footer-wrapper .sms-ft-so a{width:40px;height:40px;display:flex!important;align-items:center;justify-content:center;border:1px solid #333;color:#fff!important}
+html body #ec-instantsite .footer-wrapper .sms-ft-so a:hover{border-color:#e8622c;color:#e8622c!important}
+html body #ec-instantsite .footer-wrapper .sms-ft-so svg,html body #ec-instantsite .footer-wrapper .sms-ft-so svg path{fill:currentColor!important}
+html body #ec-instantsite .footer-wrapper .sms-ft-lk a{display:block;margin:0 0 8px}
+html body #ec-instantsite .footer-wrapper .sms-ft-btn{display:inline-block;background:#e8622c!important;color:#0b0b0b!important;font:700 13px/1 Inter,Arial,sans-serif;letter-spacing:.12em;text-transform:uppercase;padding:16px 22px;margin-top:6px}
+html body #ec-instantsite .footer-wrapper .sms-ft-btn:hover{background:#fff!important;color:#0b0b0b!important}
+html body #ec-instantsite .footer-wrapper .sms-ft-q{display:flex;flex-wrap:wrap;justify-content:center;gap:10px 26px;border-top:1px solid #222;margin-top:44px;padding:22px 0 6px}
+html body #ec-instantsite .footer-wrapper .sms-ft-q a{font:700 12px/1 Inter,Arial,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#cfcfcf!important}
+html body #ec-instantsite .footer-wrapper.sms-h-ft .copyright{font-size:12px!important;line-height:1.6!important;color:#777!important}
+html body #ec-instantsite .footer-wrapper.sms-h-ft .legal-items a{font-size:13px!important;color:#9a9a9a!important}
+@media(max-width:1023px){html body #ec-instantsite .footer-wrapper .sms-ft-c{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){html body #ec-instantsite .footer-wrapper .sms-ft{padding:40px 20px 4px}html body #ec-instantsite .footer-wrapper .sms-ft-c{grid-template-columns:1fr;gap:28px}html body #ec-instantsite .footer-wrapper .sms-ft-q{gap:12px 18px;margin-top:28px}html body .sms-ft-q a{padding:14px 0;margin:-14px 0}}
+/* 10/21/26 "Get on the SMS list" as a dark band right above the footer (UG style) */
+html body #ec-instantsite [id^="tile-contact-us"].sms-list,html body #ec-instantsite [id^="tile-contact-us"].sms-list .section__animation,html body #ec-instantsite [id^="tile-contact-us"].sms-list .section__container{background:#141414!important}
+html body #ec-instantsite [id^="tile-contact-us"].sms-list{border-bottom:1px solid #222}
+html body #ec-instantsite [id^="tile-contact-us"].sms-list h1,html body #ec-instantsite [id^="tile-contact-us"].sms-list h2,html body #ec-instantsite [id^="tile-contact-us"].sms-list h3{color:#fff!important}
+html body #ec-instantsite [id^="tile-contact-us"].sms-list p,html body #ec-instantsite [id^="tile-contact-us"].sms-list label,html body #ec-instantsite [id^="tile-contact-us"].sms-list span,html body #ec-instantsite [id^="tile-contact-us"].sms-list div{color:#cfcfcf!important}
+html body #ec-instantsite [id^="tile-contact-us"].sms-list input{background:#0b0b0b!important;color:#fff!important;border-color:#3a3a3a!important}
+html body #ec-instantsite [id^="tile-contact-us"].sms-list button,html body #ec-instantsite [id^="tile-contact-us"].sms-list button *{background:#e8622c!important;color:#0b0b0b!important;border-color:#e8622c!important}
+html body #ec-instantsite [id^="tile-contact-us"].sms-list button:hover,html body #ec-instantsite [id^="tile-contact-us"].sms-list button:hover *{background:#fff!important;border-color:#fff!important}
+.sms-list-cta{background:#141414;border-bottom:1px solid #222;width:100%}
+.sms-list-cta__in{max-width:1240px;margin:0 auto;padding:40px 24px;display:flex;align-items:center;justify-content:space-between;gap:28px;flex-wrap:wrap;box-sizing:border-box}
+.sms-list-cta__h{font:400 clamp(30px,4vw,44px)/1 'Bebas Neue','Oswald',Impact,sans-serif!important;color:#fff!important;text-transform:uppercase;letter-spacing:.02em;margin:0 0 8px!important}
+.sms-list-cta__s{color:#cfcfcf!important;font:400 15px/1.5 Inter,Arial,sans-serif!important;margin:0!important;max-width:620px}
+a.sms-list-cta__b{display:inline-block;background:#e8622c!important;color:#0b0b0b!important;font:700 13px/1 Inter,Arial,sans-serif;letter-spacing:.12em;text-transform:uppercase;padding:18px 26px;text-decoration:none!important;white-space:nowrap}
+a.sms-list-cta__b:hover{background:#fff!important}
+html body #ec-instantsite .footer-wrapper .sms-ft a{border:0!important;box-shadow:none!important;background-image:none!important}
+html body #ec-instantsite [id^="tile-contact-us"].sms-list *{background-color:transparent}
+html body #ec-instantsite [id^="tile-contact-us"].sms-list,html body #ec-instantsite [id^="tile-contact-us"].sms-list>*{background:#141414!important}
+html body #ec-instantsite #tile-contact-us-9wy2d2.sms-list,html body #ec-instantsite #tile-contact-us-9wy2d2.sms-list *{color:#cfcfcf!important}
+html body #ec-instantsite #tile-contact-us-9wy2d2.sms-list :is(h1,h2,h3,.head-text,.section__title,[class*=title]),html body #ec-instantsite #tile-contact-us-9wy2d2.sms-list :is(h1,h2,h3,.head-text,[class*=title]) *{color:#fff!important}
+html body #ec-instantsite #tile-contact-us-9wy2d2.sms-list *:not(input):not(button){background:transparent!important}
+html body #ec-instantsite #tile-contact-us-9wy2d2.sms-list{background:#141414!important;padding:8px 0!important}
+html body #ec-instantsite #tile-contact-us-9wy2d2.sms-list input{background:#0b0b0b!important;color:#fff!important;border:1px solid #3a3a3a!important}
+html body #ec-instantsite #tile-contact-us-9wy2d2.sms-list button{background:#e8622c!important;border:0!important}
+html body #ec-instantsite #tile-contact-us-9wy2d2.sms-list button *{background:transparent!important;color:#0b0b0b!important}
+html body #ec-instantsite #tile-contact-us-9wy2d2.sms-list button:hover{background:#fff!important}
+html body #ec-instantsite #tile-contact-us-9wy2d2.sms-list a{color:#fff!important}
