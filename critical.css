@@ -368,3 +368,19 @@ html body .ug-gc__sub{font-size:12px}
 
 /* iPhone search fix 10/20/26: pin the search field to the top of the overlay so the keyboard never covers it (was vertically centered). */html body .search-overlay{align-items:flex-start!important;padding-top:20px!important}
 /* 10/20/26: Featured Products titles are retagged p to h2 by the site script so an H2 sits above the product H3s; keep the old spacing */#ec-instantsite h2.head-text{margin:0!important}
+/* Smaller cookie banner (10/20/26): compact card, small type, buttons in one row. Full consent text kept. */
+.ins-notices .ins-cookie-banner{width:340px!important;max-width:calc(100vw - 24px)!important}
+.ins-cookie-banner__message{padding:14px 16px!important}
+.ins-cookie-banner__title{margin:0 0 6px!important;padding:0!important}
+.ins-cookie-banner__title-inner{font-size:13px!important;line-height:1.2!important}
+.ins-cookie-banner__content,.ins-cookie-banner__content span{font-size:11.5px!important;line-height:1.4!important;margin:0!important}
+.ins-cookie-banner__legal-links{margin:6px 0 0!important;padding:0!important}
+.ins-cookie-banner__legal-links a{font-size:11.5px!important}
+.ins-cookie-banner__buttons{display:grid!important;grid-template-columns:1fr 1fr!important;gap:6px!important;margin:10px 0 0!important;padding:0!important;height:auto!important}
+.ins-cookie-banner__buttons>a{position:static!important;margin:0!important;min-width:0!important;width:auto!important;max-width:none!important;height:auto!important}
+.ins-cookie-banner__buttons>a:last-child{grid-column:1/-1!important;text-align:center;justify-self:center}
+.ins-cookie-banner__buttons .ins-control__button{min-height:0!important;height:auto!important;padding:8px 10px!important;width:100%!important}
+.ins-cookie-banner__buttons .ins-control__wrap{padding:0!important;min-height:0!important}
+.ins-cookie-banner__buttons .ins-control__text{font-size:12px!important;line-height:1!important}
+.ins-cookie-banner__buttons>a:last-child .ins-control__text{font-size:11px!important;padding:2px 0!important}
+.ins-cookie-banner__buttons>a:last-child .ins-control__wrap{min-height:0!important;height:auto!important}
