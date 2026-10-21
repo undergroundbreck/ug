@@ -1241,3 +1241,17 @@ html body #ec-instantsite .ugm-dd,html body #ec-instantsite .ugm-sub{display:blo
 html body #ec-instantsite .ugm-li:hover>.ugm-dd,html body #ec-instantsite .ugm-li:focus-within>.ugm-dd,html body #ec-instantsite .ugm-has:hover>.ugm-sub,html body #ec-instantsite .ugm-has:focus-within>.ugm-sub{visibility:visible;opacity:1;pointer-events:auto;transition:opacity .1s ease 0s,visibility 0s linear 0s}
 #ec-instantsite .ugm-dd:before{content:"";position:absolute;left:0;right:0;top:-22px;height:22px}#ec-instantsite .ugm-sub:before{content:"";position:absolute;top:0;bottom:0;left:-14px;width:14px}
 @media(max-width:1199px){html body #ec-instantsite .ugm-dd{display:none!important}}
+/* 10/21/26 page heroes match the homepage (built in speed.js): old hero copy hidden, its stats/quick links stay as a slim band; Ski Shop video banner hidden */
+html.sms-ph #tile-video-xHPfjj{display:none!important}
+html.sms-ph .sms-rent__hero .sms-rent__eyebrow,html.sms-ph .sms-rent__hero h1,html.sms-ph .sms-rent__hero .sms-rent__lede,html.sms-ph .sms-rent__hero .sms-rent__btns{display:none!important}
+html.sms-ph .lbx-hero .eyebrow,html.sms-ph .lbx-hero h1,html.sms-ph .lbx-hero .lede{display:none!important}
+html.sms-ph .smsx-hero .smsx-eye,html.sms-ph .smsx-hero h1,html.sms-ph .smsx-hero .smsx-hero__lead,html.sms-ph .smsx-hero .smsx-btns{display:none!important}
+html.sms-ph .sms-rent__hero,html.sms-ph .lbx-hero,html.sms-ph .smsx-hero{min-height:0!important;padding-top:26px!important;padding-bottom:26px!important;background:#0c0c0c!important}
+html.sms-ph .sms-rent__hero .sms-rent__facts{margin:0!important}
+html.sms-ph .sms-rent__hero *,html.sms-ph .lbx-hero *,html.sms-ph .smsx-hero *{margin-top:0}
+.sms-hero--page h1.sms-hero__title{font-family:inherit}
+/* 10/21/26 page content fits the page width (Rentals, Salida Beta, Run Club, Ski Shop): wrappers widen to the homepage hero width */
+html body .sms-rent__wrap,html body .lbx-hero__in,html body .smsb,html body .smsb-cond,html body .smsx-in{max-width:1400px!important}
+html body .sms-rates{max-width:1400px!important}
+html.sms-ph .smsx-hero{min-height:0!important;height:auto!important}html.sms-ph .smsx-hero .smsx-in{padding-top:26px!important;padding-bottom:26px!important;min-height:0!important}html.sms-ph .smsx-hero .smsx-stats{margin-top:0!important}
+html.sms-ph .lbx-hero{padding-bottom:84px!important}html.sms-ph .lbx-hero .lbx-hero__in{padding-top:0!important;min-height:0!important}
