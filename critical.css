@@ -453,3 +453,11 @@ html body #ec-instantsite .categories-menu__list.ugm-on>li.ugm-li{padding-bottom
 #ec-instantsite .ins-cookie-banner__buttons>a:last-child .ins-control__text{font-size:11px!important;padding:0!important;white-space:nowrap!important;text-decoration:underline!important}
 }
 @media (max-width:359px){#ec-instantsite .ins-cookie-banner__buttons{grid-template-columns:1fr 1fr!important}#ec-instantsite .ins-cookie-banner__buttons>a:last-child{grid-column:1/-1!important;justify-self:center!important}}
+
+/* 10/21/26 phone announcement bar: tighter, smaller type, "Book demos" and the opening date or countdown on their own lines (the bullet between them is hidden) */
+@media (max-width:767px){
+html body #ec-instantsite .ug-kib,html body #ec-instantsite .key-info-bar.ug-kib{padding:5px 12px!important;line-height:1.25!important;letter-spacing:.04em!important}
+html body #ec-instantsite .ug-kib>a,html body #ec-instantsite .ug-kib>span{display:block!important;font-size:11px!important;line-height:1.3!important;padding:0!important;margin:0!important}
+html body #ec-instantsite .ug-kib>span{margin-top:1px!important}
+html body #ec-instantsite .ug-kib>.ug-kib-sep{display:none!important}
+}
