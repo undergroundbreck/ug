@@ -412,3 +412,5 @@ html body .ug-gc__sub{font-size:12px}
 /* 10/21/26 announcement bar moved under the category menu (Milo style), logo grey with black text, Book demos link orange; header stays whole when sticky */
 #ec-instantsite header.custom-header{flex-direction:column}#ec-instantsite header.custom-header>.key-info-bar{order:10!important}
 html body #ec-instantsite .key-info-bar{background:#e0e0e0!important;color:#0b0b0b!important;border:0!important}html body #ec-instantsite .key-info-bar *{color:#0b0b0b!important}html body #ec-instantsite .key-info-bar a,html body #ec-instantsite .key-info-bar a *{color:#e8622c!important;font-weight:700!important}
+/* 10/21/26 UG menu: Brands always shows (its item is cloned from a hidden one) */
+html body #ec-instantsite .categories-menu__list.ugm-on>li[data-ug-br]{display:list-item!important}
