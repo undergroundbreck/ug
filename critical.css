@@ -461,3 +461,12 @@ html body #ec-instantsite .ug-kib>a,html body #ec-instantsite .ug-kib>span{displ
 html body #ec-instantsite .ug-kib>span{margin-top:1px!important}
 html body #ec-instantsite .ug-kib>.ug-kib-sep{display:none!important}
 }
+
+/* 10/21/26 phone menu Explore list matches the desktop top row: Demos & Rentals, Shop Services, Breck Beta, Locals Day (orange). Visit the Shop, Customer Care and About are in the footer, same as desktop. */
+.fullscreen-overlay .mobile-site-menu__content .navigation-menu__list{display:flex!important;flex-direction:column!important}
+.fullscreen-overlay .mobile-site-menu__content .navigation-menu__list>li:has(>button),.fullscreen-overlay .mobile-site-menu__content .navigation-menu__list>li:has(a[href="/about"]){display:none!important}
+.fullscreen-overlay .mobile-site-menu__content .navigation-menu__list>li:has(a[href="/snowboard-rentals-breckenridge"]){order:1}
+.fullscreen-overlay .mobile-site-menu__content .navigation-menu__list>li:has(a[href="/snowboard-shop-services-breckenridge"]){order:2}
+.fullscreen-overlay .mobile-site-menu__content .navigation-menu__list>li:has(a[href="/local-beta"]){order:3}
+.fullscreen-overlay .mobile-site-menu__content .navigation-menu__list>li:has(a[href="/locals-day"]){order:4}
+html body .fullscreen-overlay .mobile-site-menu__content .navigation-menu__list a[href="/locals-day"],html body .fullscreen-overlay .mobile-site-menu__content .navigation-menu__list a[href="/locals-day"] *{color:#e8622c!important}
