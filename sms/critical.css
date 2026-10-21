@@ -712,20 +712,20 @@ a.smsx-card:hover .smsx-card__img{filter:brightness(1.08)}
 /* site fixes */
 #ec-instantsite a[class*="__btn--ghost"]:visited{color:#f4f1ea!important}
 #ec-instantsite a[class*="__btn--ghost"]:visited:hover{color:#121614!important}
-/* SMSX category pages: chips + products first */
-#ec-instantsite .ec-store__category-page .ec-grid.grid__wrap{display:flex!important;flex-direction:column!important}
-#ec-instantsite .ec-store__category-page .grid__description{order:5;margin:56px 0 0!important;padding-top:40px;border-top:1px solid #d9d5cc;max-width:900px}
-#ec-instantsite .ec-store__category-page .grid__categories{display:flex!important;flex-wrap:wrap!important;gap:8px!important;margin:0 0 28px!important;grid-template-columns:none!important}
-#ec-instantsite .ec-store__category-page .grid__categories .grid-category{width:auto!important;max-width:none!important;flex:0 0 auto!important;margin:0!important;padding:0!important}
-#ec-instantsite .ec-store__category-page .grid__categories .grid-category__image,#ec-instantsite .ec-store__category-page .grid__categories .grid-category__spacer,#ec-instantsite .ec-store__category-page .grid__categories .grid-category__hover-wrap{display:none!important}
-#ec-instantsite .ec-store__category-page .grid__categories .grid-category__wrap,#ec-instantsite .ec-store__category-page .grid__categories .grid-category__wrap-inner,#ec-instantsite .ec-store__category-page .grid__categories .grid-category__card{padding:0!important;margin:0!important;width:auto!important;height:auto!important;box-shadow:none!important;background:none!important;border:0!important;transform:none!important}
-#ec-instantsite .ec-store__category-page .grid__categories a.grid-category__title{display:block!important;border:1px solid #0b0b0b!important;background:#fff!important;padding:12px 18px!important;margin:0!important;text-align:center!important;transition:background .15s}
-#ec-instantsite .ec-store__category-page .grid__categories .grid-category__title-inner{font:700 12px/1 'Inter',system-ui,sans-serif!important;letter-spacing:.12em!important;text-transform:uppercase!important;color:#0b0b0b!important;white-space:nowrap!important}
-#ec-instantsite .ec-store__category-page .grid__categories a.grid-category__title:hover{background:#0b0b0b!important}
-#ec-instantsite .ec-store__category-page .grid__categories a.grid-category__title:hover .grid-category__title-inner{color:#fff!important}
-#ec-instantsite .ec-store__category-page .grid__categories{justify-content:flex-start!important;align-items:flex-start!important}
-#ec-instantsite .ec-store__category-page .grid__categories a.grid-category__title,#ec-instantsite .ec-store__category-page .grid__categories .grid-category__title-inner{height:auto!important;min-height:0!important;max-height:none!important;line-height:1!important}
-#ec-instantsite .ec-store__category-page .grid__categories .grid-category__title-inner{display:block!important;overflow:visible!important}
+/* SMSX category pages: chips + products first (subcategory pages only; main shop page keeps photo tiles, 10/21/26) */
+#ec-instantsite .ec-store__category-page:not(.ec-store__category-page--0) .ec-grid.grid__wrap{display:flex!important;flex-direction:column!important}
+#ec-instantsite .ec-store__category-page:not(.ec-store__category-page--0) .grid__description{order:5;margin:56px 0 0!important;padding-top:40px;border-top:1px solid #d9d5cc;max-width:900px}
+#ec-instantsite .ec-store__category-page:not(.ec-store__category-page--0) .grid__categories{display:flex!important;flex-wrap:wrap!important;gap:8px!important;margin:0 0 28px!important;grid-template-columns:none!important}
+#ec-instantsite .ec-store__category-page:not(.ec-store__category-page--0) .grid__categories .grid-category{width:auto!important;max-width:none!important;flex:0 0 auto!important;margin:0!important;padding:0!important}
+#ec-instantsite .ec-store__category-page:not(.ec-store__category-page--0) .grid__categories .grid-category__image,#ec-instantsite .ec-store__category-page:not(.ec-store__category-page--0) .grid__categories .grid-category__spacer,#ec-instantsite .ec-store__category-page:not(.ec-store__category-page--0) .grid__categories .grid-category__hover-wrap{display:none!important}
+#ec-instantsite .ec-store__category-page:not(.ec-store__category-page--0) .grid__categories .grid-category__wrap,#ec-instantsite .ec-store__category-page:not(.ec-store__category-page--0) .grid__categories .grid-category__wrap-inner,#ec-instantsite .ec-store__category-page:not(.ec-store__category-page--0) .grid__categories .grid-category__card{padding:0!important;margin:0!important;width:auto!important;height:auto!important;box-shadow:none!important;background:none!important;border:0!important;transform:none!important}
+#ec-instantsite .ec-store__category-page:not(.ec-store__category-page--0) .grid__categories a.grid-category__title{display:block!important;border:1px solid #0b0b0b!important;background:#fff!important;padding:12px 18px!important;margin:0!important;text-align:center!important;transition:background .15s}
+#ec-instantsite .ec-store__category-page:not(.ec-store__category-page--0) .grid__categories .grid-category__title-inner{font:700 12px/1 'Inter',system-ui,sans-serif!important;letter-spacing:.12em!important;text-transform:uppercase!important;color:#0b0b0b!important;white-space:nowrap!important}
+#ec-instantsite .ec-store__category-page:not(.ec-store__category-page--0) .grid__categories a.grid-category__title:hover{background:#0b0b0b!important}
+#ec-instantsite .ec-store__category-page:not(.ec-store__category-page--0) .grid__categories a.grid-category__title:hover .grid-category__title-inner{color:#fff!important}
+#ec-instantsite .ec-store__category-page:not(.ec-store__category-page--0) .grid__categories{justify-content:flex-start!important;align-items:flex-start!important}
+#ec-instantsite .ec-store__category-page:not(.ec-store__category-page--0) .grid__categories a.grid-category__title,#ec-instantsite .ec-store__category-page:not(.ec-store__category-page--0) .grid__categories .grid-category__title-inner{height:auto!important;min-height:0!important;max-height:none!important;line-height:1!important}
+#ec-instantsite .ec-store__category-page:not(.ec-store__category-page--0) .grid__categories .grid-category__title-inner{display:block!important;overflow:visible!important}
 /* SMS mobile search compact (UG) */
 @media (max-width:1199px){
 #ec-instantsite .mobile-header__bottom{justify-content:space-between!important;padding:4px 16px 14px!important}
@@ -1184,3 +1184,45 @@ html body #ec-instantsite [id^="tile-custom-header"] header.custom-header>.key-i
 html body #ec-instantsite .ug-kib{display:block!important;position:relative;z-index:1;background:#e0e0e0!important;color:#0b0b0b!important;text-align:center}html body #ec-instantsite .ug-kib *{color:#0b0b0b!important}html body #ec-instantsite .ug-kib a,html body #ec-instantsite .ug-kib a *,html body #ec-instantsite .ug-kib .ug-ship,html body #ec-instantsite .ug-kib .ug-ship *{color:#e8622c!important;font-weight:700!important}
 /* 10/21/26 search bar off on desktop (beats the older .custom-header rule) */
 @media(min-width:768px){html body #ec-instantsite .custom-header .header-bottom-row__right .search.search--full{display:none!important}}
+
+/* 10/21/26 shop page tiles match the header menu (12 tiles, header order; labels set in speed.js). White tiles, no grey fade. */
+#ec-instantsite .ec-store__category-page--0 .grid__categories .grid-category{display:none!important}
+#ec-instantsite .ec-store__category-page--0 .grid__categories .grid-category--id-203649371{display:block!important;order:1}
+#ec-instantsite .ec-store__category-page--0 .grid__categories .grid-category--id-192620281{display:block!important;order:2}
+#ec-instantsite .ec-store__category-page--0 .grid__categories .grid-category--id-197097523{display:block!important;order:3}
+#ec-instantsite .ec-store__category-page--0 .grid__categories .grid-category--id-193720009{display:block!important;order:4}
+#ec-instantsite .ec-store__category-page--0 .grid__categories .grid-category--id-207587286{display:block!important;order:5}
+#ec-instantsite .ec-store__category-page--0 .grid__categories .grid-category--id-201524023{display:block!important;order:6}
+#ec-instantsite .ec-store__category-page--0 .grid__categories .grid-category--id-203649356{display:block!important;order:7}
+#ec-instantsite .ec-store__category-page--0 .grid__categories .grid-category--id-203657073{display:block!important;order:8}
+#ec-instantsite .ec-store__category-page--0 .grid__categories .grid-category--id-187000323{display:block!important;order:9}
+#ec-instantsite .ec-store__category-page--0 .grid__categories .grid-category--id-190187794{display:block!important;order:10}
+#ec-instantsite .ec-store__category-page--0 .grid__categories .grid-category--id-207592561{display:block!important;order:11}
+#ec-instantsite .ec-store__category-page--0 .grid__categories .grid-category--id-194370086{display:block!important;order:12}
+#ec-instantsite .grid__categories .grid-category__card{background:#fff!important;border-color:#e6e6e6!important}
+#ec-instantsite .grid-category__shadow,.grid-category__shadow{background:none!important;background-color:transparent!important}
+#ec-instantsite .grid__categories .grid-category__bg,#ec-instantsite .grid__categories .grid-category__bg-color,#ec-instantsite .grid__categories .grid-category__image{background:#fff!important}
+#ec-instantsite .grid__categories img.grid-category__picture-img{padding:4%!important;background:#fff!important}
+
+/* 10/21/26 phone cookie banner: slim full-width bar at the bottom (was ~35% of the screen). Text is clamped to 3 lines; the Privacy Policy link, Accept, Decline and Cookie Settings stay. */
+@media (max-width:640px){
+#ec-instantsite .ins-notices.ins-notices--fixed{left:0!important;right:0!important;bottom:0!important;width:100%!important;max-width:100%!important;padding:0!important;margin:0!important}
+#ec-instantsite .ins-notices__wrap{padding:0!important;margin:0!important;width:100%!important}
+#ec-instantsite .ins-notices .ins-cookie-banner{width:100%!important;max-width:100%!important;margin:0!important;border-radius:0!important;border-left:0!important;border-right:0!important;border-bottom:0!important;box-shadow:0 -2px 12px rgba(0,0,0,.18)!important}
+#ec-instantsite .ins-cookie-banner__wrap{padding:0!important;margin:0!important}
+#ec-instantsite .ins-cookie-banner__message{padding:10px 14px calc(8px + env(safe-area-inset-bottom))!important}
+#ec-instantsite .ins-cookie-banner__title{display:none!important}
+#ec-instantsite .ins-cookie-banner__content{display:-webkit-box!important;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden!important}
+#ec-instantsite .ins-cookie-banner__legal-links{margin:3px 0 0!important}
+#ec-instantsite .ins-cookie-banner__buttons{margin:8px 0 0!important;gap:8px!important;grid-template-columns:1fr 1fr auto!important;align-items:center!important}
+#ec-instantsite .ins-cookie-banner__buttons>a:last-child{grid-column:auto!important;justify-self:end!important}
+#ec-instantsite .ins-cookie-banner__buttons .ins-control__button{min-height:38px!important;padding:0 6px!important;min-width:0!important;width:100%!important}
+#ec-instantsite .ins-cookie-banner__buttons .ins-control__wrap{padding:0!important;min-width:0!important}
+#ec-instantsite .ins-cookie-banner__buttons .ins-control__text{white-space:nowrap!important;font-size:13px!important}
+#ec-instantsite .ins-cookie-banner__buttons>a:last-child,#ec-instantsite .ins-cookie-banner__buttons>a:last-child .ins-control__wrap{min-height:0!important;height:auto!important;padding:0!important;line-height:1.2!important}
+#ec-instantsite .ins-cookie-banner__buttons>a:last-child .ins-control__text{font-size:11px!important;padding:0!important;white-space:nowrap!important;text-decoration:underline!important}
+}
+@media (max-width:359px){#ec-instantsite .ins-cookie-banner__buttons{grid-template-columns:1fr 1fr!important}#ec-instantsite .ins-cookie-banner__buttons>a:last-child{grid-column:1/-1!important;justify-self:center!important}}
+
+/* 10/21/26 speed: hold the announcement bar space until speed.js moves it in (stops the page jumping 40px at load) */html body #ec-instantsite [id^="tile-custom-header"]:has(header.custom-header>.key-info-bar):not(:has(+#ug-kib)){border-bottom:28px solid #e0e0e0}@media(max-width:767px){html body #ec-instantsite [id^="tile-custom-header"]:has(header.custom-header>.key-info-bar):not(:has(+#ug-kib)){border-bottom-width:40px}}@media(min-width:768px) and (max-width:1023px){html body #ec-instantsite [id^="tile-custom-header"]:has(header.custom-header>.key-info-bar):not(:has(+#ug-kib)){border-bottom-width:21px}}
+/* 10/21/26 footer legal row: centered, no Made with Ecwid */html body #ec-instantsite .footer-wrapper .powered-by{display:none!important}html body #ec-instantsite .footer-wrapper .legal-social-container{display:flex!important;justify-content:center!important;align-items:center!important;width:100%!important;max-width:none!important;padding:18px 16px 26px!important;margin:0!important;box-sizing:border-box}html body #ec-instantsite .footer-wrapper .legal-items{display:flex!important;flex-wrap:wrap!important;justify-content:center!important;align-items:center!important;gap:8px 0!important;width:auto!important;margin:0 auto!important}html body #ec-instantsite .footer-wrapper .legal-items a{font:600 11px/1.2 Inter,Arial,sans-serif!important;letter-spacing:.12em!important;text-transform:uppercase!important;color:#8f8f8f!important;text-decoration:none!important;cursor:pointer;padding:0!important}html body #ec-instantsite .footer-wrapper .legal-items a:hover{color:#e8622c!important}html body #ec-instantsite .footer-wrapper .legal-items .separator{font-size:0!important;width:4px;height:4px;border-radius:50%;background:#444;margin:0 16px!important;padding:0!important;border:0!important;flex:none}
