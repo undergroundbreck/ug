@@ -1160,3 +1160,7 @@ html body .sms-activity-title,html body .sms-activity-cta{font-size:12px!importa
 .ins-cookie-banner__buttons .ins-control__text{font-size:12px!important;line-height:1!important}
 .ins-cookie-banner__buttons>a:last-child .ins-control__text{font-size:11px!important;padding:2px 0!important}
 .ins-cookie-banner__buttons>a:last-child .ins-control__wrap{min-height:0!important;height:auto!important}
+
+/* 2026-10-21 product cards: white tiles (no Ecwid grey shadow), same photo size on every card, ribbons clear of the product on mobile */
+#ec-instantsite .grid-product__shadow{display:none!important}#ec-instantsite .grid-product__bg,#ec-instantsite .grid-product__image,#ec-instantsite .grid-product__image-wrap,#ec-instantsite .grid-product__picture,#ec-instantsite .grid-product__picture-additional{background:#fff!important}#ec-instantsite .grid-product__image-wrap img{object-fit:contain!important;object-position:center!important;box-sizing:border-box!important}
+@media(max-width:767px){#ec-instantsite .grid-product__image-wrap img{padding:30px 4% 4%!important}#ec-instantsite .grid-product__label{top:4px!important;right:4px!important;left:auto!important;bottom:auto!important;margin:0!important}#ec-instantsite .grid-product__label .ec-label{padding:4px 6px 2px!important;box-shadow:2px 2px 0 #0b0b0b!important;margin:0!important}#ec-instantsite .grid-product__label .ec-label .label__text{font-size:13px!important;line-height:1!important}#ec-instantsite .ugb-chip{top:4px!important;left:4px!important;padding:5px 6px!important;font-size:9px!important}}
