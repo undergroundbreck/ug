@@ -423,3 +423,8 @@ html body #ec-instantsite .ug-kib{display:block!important;position:relative;z-in
 html body #ec-instantsite .navigation-menu__list>li[data-ug-n] a[href="/locals-day"],html body #ec-instantsite .navigation-menu__list>li[data-ug-n] a[href="/locals-day"] *{color:#e8622c!important}
 /* 10/21/26 search bar off on desktop (beats the older .custom-header rule) */
 @media(min-width:768px){html body #ec-instantsite .custom-header .header-bottom-row__right .search.search--full{display:none!important}}
+/* 10/21/26 UG menu dropdowns easier to use: hover bridge over the gap and a short close delay */
+html body #ec-instantsite .ugm-dd,html body #ec-instantsite .ugm-sub{display:block!important;visibility:hidden;opacity:0;pointer-events:none;transition:opacity .12s ease .18s,visibility 0s linear .3s}
+html body #ec-instantsite .ugm-li:hover>.ugm-dd,html body #ec-instantsite .ugm-li:focus-within>.ugm-dd,html body #ec-instantsite .ugm-has:hover>.ugm-sub,html body #ec-instantsite .ugm-has:focus-within>.ugm-sub{visibility:visible;opacity:1;pointer-events:auto;transition:opacity .1s ease 0s,visibility 0s linear 0s}
+.ugm-dd:before{content:"";position:absolute;left:0;right:0;top:-22px;height:22px}.ugm-sub:before{content:"";position:absolute;top:0;bottom:0;left:-14px;width:14px}
+html body #ec-instantsite .categories-menu__list.ugm-on>li.ugm-li{padding-bottom:6px!important;margin-bottom:-6px!important}
