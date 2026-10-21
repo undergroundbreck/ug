@@ -428,3 +428,8 @@ html body #ec-instantsite .ugm-dd,html body #ec-instantsite .ugm-sub{display:blo
 html body #ec-instantsite .ugm-li:hover>.ugm-dd,html body #ec-instantsite .ugm-li:focus-within>.ugm-dd,html body #ec-instantsite .ugm-has:hover>.ugm-sub,html body #ec-instantsite .ugm-has:focus-within>.ugm-sub{visibility:visible;opacity:1;pointer-events:auto;transition:opacity .1s ease 0s,visibility 0s linear 0s}
 .ugm-dd:before{content:"";position:absolute;left:0;right:0;top:-22px;height:22px}.ugm-sub:before{content:"";position:absolute;top:0;bottom:0;left:-14px;width:14px}
 html body #ec-instantsite .categories-menu__list.ugm-on>li.ugm-li{padding-bottom:6px!important;margin-bottom:-6px!important}
+
+/* 10/21/26 category tiles: remove Ecwid grey tint and white fade on category tile photos (Kids tile looked grey) */
+#ec-instantsite .grid-category__shadow,.grid-category__shadow{background:none!important;background-color:transparent!important}
+#ec-instantsite .grid-category__card{background-color:#fff!important}
+#ec-instantsite .grid-category .grid-category__picture-img{padding:5% 8% 15% 8%!important}
