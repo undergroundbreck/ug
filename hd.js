@@ -210,3 +210,11 @@ var q=0,n=0,t0=Date.now(),MO=new MutationObserver(function(){if(q)return;q=1;req
 function run(){var w=document.querySelector(".footer-wrapper");if(!w)return;var g=w.querySelector(".ug-ft");if(g)H=g.outerHTML;else if(H)w.insertAdjacentHTML("beforeend",H);
 var li=w.querySelector(".legal-items");if(li&&!li.querySelector(".ug-ret")){var lst=li.lastElementChild;if(!lst||!/separator/.test(lst.className)){var s=document.createElement("p");s.className="separator";s.textContent="|";li.appendChild(s)}var a=document.createElement("a");a.className="ug-ret";a.href="/products/pages/returns";a.textContent="Return Policy";li.appendChild(a)}}
 run();setInterval(function(){if(!document.hidden)run()},1000)});
+
+/* 10/21/26 demo fleet rail: wraps the homepage demo board list and adds prev/next arrows on desktop. Swipe on phones. Re-wraps if Ecwid re-renders the section. */
+(window.__ugReady||function(f){f()})(function(){if(window.__ugRail)return;window.__ugRail=1;
+function upd(r,u){var e=u.scrollLeft+u.clientWidth>=u.scrollWidth-4,s=u.scrollLeft<=4;r.classList.toggle("is-end",e);var p=r.querySelector(".ug-fleet__nav--p"),n=r.querySelector(".ug-fleet__nav--n");p&&(p.disabled=s);n&&(n.disabled=e)}
+function run(){var u=document.querySelector("ul.ug-fleet__boards");if(!u||u.parentNode.classList.contains("ug-fleet__rail"))return;var r=document.createElement("div");r.className="ug-fleet__rail";u.parentNode.insertBefore(r,u);r.appendChild(u);
+[["p","←","Previous boards",-1],["n","→","More boards",1]].forEach(function(d){var b=document.createElement("button");b.type="button";b.className="ug-fleet__nav ug-fleet__nav--"+d[0];b.textContent=d[1];b.setAttribute("aria-label",d[2]);b.addEventListener("click",function(){u.scrollBy({left:d[3]*Math.max(220,u.clientWidth*.8),behavior:"smooth"})});r.appendChild(b)});
+u.addEventListener("scroll",function(){upd(r,u)},{passive:!0});window.addEventListener("resize",function(){upd(r,u)});upd(r,u)}
+run();setInterval(function(){if(!document.hidden)run()},1500)});
