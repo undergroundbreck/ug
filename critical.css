@@ -414,3 +414,10 @@ html body .ug-gc__sub{font-size:12px}
 html body #ec-instantsite .key-info-bar{background:#e0e0e0!important;color:#0b0b0b!important;border:0!important}html body #ec-instantsite .key-info-bar *{color:#0b0b0b!important}html body #ec-instantsite .key-info-bar a,html body #ec-instantsite .key-info-bar a *{color:#e8622c!important;font-weight:700!important}
 /* 10/21/26 UG menu: Brands always shows (its item is cloned from a hidden one) */
 html body #ec-instantsite .categories-menu__list.ugm-on>li[data-ug-br]{display:list-item!important}
+/* 10/21/26 header polish: outline icons with a real cart, no line between the two menu rows, search bar gone (the magnifier opens search), announcement bar copy below the sticky header so it scrolls away, Book demos link orange */
+html body #ec-instantsite .hd-ic svg,html body #ec-instantsite .hd-ic svg *{fill:none!important}html body #ec-instantsite .hd-ic svg *{stroke:currentColor!important}
+#ec-instantsite .navigation-menu-spacer{display:none!important}#ec-instantsite .header-top-row,#ec-instantsite .header-bottom-row,#ec-instantsite .header-container{border-top:0!important;border-bottom:0!important;box-shadow:none!important}
+@media(min-width:768px){html body #ec-instantsite .header-bottom-row__right .search,html body #ec-instantsite .header-bottom-row .search--full{display:none!important}}
+html body #ec-instantsite [id^="tile-custom-header"] header.custom-header>.key-info-bar{display:none!important}
+html body #ec-instantsite .ug-kib{display:block!important;position:relative;z-index:1;background:#e0e0e0!important;color:#0b0b0b!important;text-align:center}html body #ec-instantsite .ug-kib *{color:#0b0b0b!important}html body #ec-instantsite .ug-kib a,html body #ec-instantsite .ug-kib a *,html body #ec-instantsite .ug-kib .ug-ship,html body #ec-instantsite .ug-kib .ug-ship *{color:#e8622c!important;font-weight:700!important}
+html body #ec-instantsite .navigation-menu__list>li[data-ug-n] a[href="/locals-day"],html body #ec-instantsite .navigation-menu__list>li[data-ug-n] a[href="/locals-day"] *{color:#e8622c!important}
