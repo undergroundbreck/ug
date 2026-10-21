@@ -433,3 +433,23 @@ html body #ec-instantsite .categories-menu__list.ugm-on>li.ugm-li{padding-bottom
 #ec-instantsite .grid-category__shadow,.grid-category__shadow{background:none!important;background-color:transparent!important}
 #ec-instantsite .grid-category__card{background-color:#fff!important}
 #ec-instantsite .grid-category .grid-category__picture-img{padding:5% 8% 15% 8%!important}
+
+/* 10/21/26 phone cookie banner: slim full-width bar at the bottom (was ~35% of the screen). Text is clamped to 3 lines; the Privacy Policy link, Accept, Decline and Cookie Settings stay. */
+@media (max-width:640px){
+#ec-instantsite .ins-notices.ins-notices--fixed{left:0!important;right:0!important;bottom:0!important;width:100%!important;max-width:100%!important;padding:0!important;margin:0!important}
+#ec-instantsite .ins-notices__wrap{padding:0!important;margin:0!important;width:100%!important}
+#ec-instantsite .ins-notices .ins-cookie-banner{width:100%!important;max-width:100%!important;margin:0!important;border-radius:0!important;border-left:0!important;border-right:0!important;border-bottom:0!important;box-shadow:0 -2px 12px rgba(0,0,0,.18)!important}
+#ec-instantsite .ins-cookie-banner__wrap{padding:0!important;margin:0!important}
+#ec-instantsite .ins-cookie-banner__message{padding:10px 14px calc(8px + env(safe-area-inset-bottom))!important}
+#ec-instantsite .ins-cookie-banner__title{display:none!important}
+#ec-instantsite .ins-cookie-banner__content{display:-webkit-box!important;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden!important}
+#ec-instantsite .ins-cookie-banner__legal-links{margin:3px 0 0!important}
+#ec-instantsite .ins-cookie-banner__buttons{margin:8px 0 0!important;gap:8px!important;grid-template-columns:1fr 1fr auto!important;align-items:center!important}
+#ec-instantsite .ins-cookie-banner__buttons>a:last-child{grid-column:auto!important;justify-self:end!important}
+#ec-instantsite .ins-cookie-banner__buttons .ins-control__button{min-height:38px!important;padding:0 6px!important;min-width:0!important;width:100%!important}
+#ec-instantsite .ins-cookie-banner__buttons .ins-control__wrap{padding:0!important;min-width:0!important}
+#ec-instantsite .ins-cookie-banner__buttons .ins-control__text{white-space:nowrap!important;font-size:13px!important}
+#ec-instantsite .ins-cookie-banner__buttons>a:last-child,#ec-instantsite .ins-cookie-banner__buttons>a:last-child .ins-control__wrap{min-height:0!important;height:auto!important;padding:0!important;line-height:1.2!important}
+#ec-instantsite .ins-cookie-banner__buttons>a:last-child .ins-control__text{font-size:11px!important;padding:0!important;white-space:nowrap!important;text-decoration:underline!important}
+}
+@media (max-width:359px){#ec-instantsite .ins-cookie-banner__buttons{grid-template-columns:1fr 1fr!important}#ec-instantsite .ins-cookie-banner__buttons>a:last-child{grid-column:1/-1!important;justify-self:center!important}}
