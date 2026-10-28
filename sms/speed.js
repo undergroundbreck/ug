@@ -205,3 +205,16 @@ it.forEach(function(x){var u=x.url.replace(/^https?:\/\/[^\/]+/,"");h+='<a class
 h+="</div></div>";var w=D.querySelector(".ec-store__content-wrapper")||D.querySelector(".ec-store");if(!w)return;var t=D.createElement("div");t.innerHTML=h;var ft=w.querySelector(".ec-footer");ft&&ft.parentNode===w?w.insertBefore(t.firstChild,ft):w.appendChild(t.firstChild)})}).catch(function(){})}
 function onPage(p){if(!p||p.type!=="PRODUCT"){cur=0;if(mo){mo.disconnect();mo=null}return}cur=p.productId;setTimeout(function(){if(cur!==p.productId)return;pre();watch()},300);setTimeout(function(){if(cur===p.productId)rel(p.productId)},3000)}
 (function w(){window.Ecwid&&Ecwid.OnPageLoaded?Ecwid.OnPageLoaded.add(onPage):setTimeout(w,400)})()}();
+/* SMS PAYPAL PAY LATER BANNER (10/28/26, Austin, same as UG): "Pay in 4 interest-free payments of $X" / "As low as $X/mo" line right under the price on product pages. Uses the PayPal SDK Ecwid already loads for the SMS PayPal account (merchant H95XE2TLLQ3BW), so no extra script. Follows variant price changes; skipped under $30 (below Pay in 4's minimum) and on gift cards. Cart already shows Ecwid's own Pay in 4 line. */
+!function(){if(window.__smsPL)return;window.__smsPL=1;var D=document,cur=0,last=null,mo=null,q=0;
+var st=D.createElement("style");st.textContent=".ug-pl{margin:8px 0 2px;min-height:22px}";(D.head||D.documentElement).appendChild(st);
+function amt(){var e=D.querySelector(".product-details__product-price .details-product-price__value");if(!e)return 0;var n=parseFloat(e.textContent.replace(/[^0-9.]/g,""));return isFinite(n)?n:0}
+function put(){var row=D.querySelector(".product-details__product-price-row .product-details-module__content");if(!row)return;var ex=row.querySelector(".ug-pl"),a=amt();
+var gift=/gift card/i.test((D.querySelector(".product-details__product-title")||{}).textContent||"");
+if(gift||a<30){if(ex)ex.remove();last=null;return}
+if(ex&&last===a)return;if(!window.paypal||!paypal.Messages){setTimeout(put,800);return}
+if(!ex){ex=D.createElement("div");ex.className="ug-pl";row.appendChild(ex)}last=a;ex.innerHTML="";
+paypal.Messages({amount:a,currency:"USD",placement:"product",style:{layout:"text",logo:{type:"inline"},text:{color:"black",size:13}}}).render(ex).catch(function(){})}
+function watch(){if(mo)mo.disconnect();var r=D.querySelector(".product-details__product-price-row");if(!r)return;mo=new MutationObserver(function(rs){if(q||rs.every(function(x){return x.target.closest&&x.target.closest(".ug-pl")}))return;q=1;setTimeout(function(){q=0;put()},150)});mo.observe(r,{childList:!0,subtree:!0,characterData:!0})}
+function onPage(p){if(!p||p.type!=="PRODUCT"){cur=0;last=null;if(mo){mo.disconnect();mo=null}return}cur=p.productId;last=null;setTimeout(function(){if(cur!==p.productId)return;put();watch()},400)}
+(function w(){window.Ecwid&&Ecwid.OnPageLoaded?Ecwid.OnPageLoaded.add(onPage):setTimeout(w,400)})()}();
