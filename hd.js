@@ -300,3 +300,90 @@ paypal.Messages({amount:a,currency:"USD",placement:"product",style:{layout:"text
 function watch(){if(mo)mo.disconnect();var r=D.querySelector(".product-details__product-price-row");if(!r)return;mo=new MutationObserver(function(rs){if(q||rs.every(function(x){return x.target.closest&&x.target.closest(".ug-pl")}))return;q=1;setTimeout(function(){q=0;put()},150)});mo.observe(r,{childList:!0,subtree:!0,characterData:!0})}
 function onPage(p){if(!p||p.type!=="PRODUCT"){cur=0;last=null;if(mo){mo.disconnect();mo=null}return}cur=p.productId;last=null;setTimeout(function(){if(cur!==p.productId)return;put();watch()},400)}
 (function w(){window.Ecwid&&Ecwid.OnPageLoaded?Ecwid.OnPageLoaded.add(onPage):setTimeout(w,400)})()}();
+/* ------------------------------------------------------------------
+   Underground Snowboards: Google Ads purchase tag (added Oct 29, 2026)
+   Paste at the very end of hd.js (undergroundbreck/ug).
+
+   - Loads the Google Ads tag AW-18513495206 on every page so the ad
+     click id (gclid) is saved when someone lands from an ad.
+   - When an order is placed, sends one "Purchase (site tag)" conversion
+     straight from the shopper's browser, so Google Ads no longer depends
+     on GA4 matching the sale to the visit.
+   - Value = order total minus tax and shipping (closer to real sales).
+   - transaction_id = order number, so a refresh can't count it twice.
+   - Email is passed for enhanced conversions; gtag hashes it before
+     sending. Google only uses it once enhanced conversions is turned on
+     in the Ads account.
+   - The conversion action is Secondary in Google Ads, so this can't
+     double count against the GA4 import while we compare them.
+------------------------------------------------------------------- */
+(function () {
+  var AW_ID = 'AW-18513495206';
+  var SEND_TO = 'AW-18513495206/IvT-CLe1tq4dEKaJ9vtE';
+  var W = window, D = document;
+
+  function num(x) {
+    var n = parseFloat(x);
+    return isFinite(n) ? n : 0;
+  }
+
+  // Make sure gtag exists (Lightspeed normally loads it for GA4 already).
+  W.dataLayer = W.dataLayer || [];
+  if (typeof W.gtag !== 'function') {
+    W.gtag = function () { W.dataLayer.push(arguments); };
+    W.gtag('js', new Date());
+  }
+  if (!D.querySelector('script[src*="gtag/js?id=' + AW_ID + '"]')) {
+    var s = D.createElement('script');
+    s.async = true;
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=' + AW_ID;
+    D.head.appendChild(s);
+  }
+  W.gtag('config', AW_ID);
+
+  function orderValue(o) {
+    var total = num(o.total);
+    var tax = num(o.tax);
+    var ship = num(o.shipping) ||
+      num(o.shippingOption && (o.shippingOption.shippingRate || o.shippingOption.rate)) ||
+      num(o.shippingRate);
+    var v = total - tax - ship;
+    if (v > 0) return Math.round(v * 100) / 100;
+    if (num(o.subtotal) > 0) return Math.round(num(o.subtotal) * 100) / 100;
+    return Math.round(total * 100) / 100;
+  }
+
+  function onOrder(o) {
+    try {
+      if (!o) return;
+      var id = String(o.orderNumber || o.vendorOrderNumber || o.id || '');
+      if (!id) return;
+      var key = 'ug_aw_sent_' + id;
+      try { if (W.sessionStorage.getItem(key)) return; } catch (e) {}
+
+      var email = (o.customer && o.customer.email) || o.email || '';
+      if (email) W.gtag('set', 'user_data', { email: String(email).trim().toLowerCase() });
+
+      var value = orderValue(o);
+      W.gtag('event', 'conversion', {
+        send_to: SEND_TO,
+        value: value,
+        currency: 'USD',
+        transaction_id: id
+      });
+
+      try { W.sessionStorage.setItem(key, '1'); } catch (e) {}
+      if (W.console) console.log('[UG ads] purchase tag sent: order ' + id + ', value ' + value.toFixed(2));
+    } catch (err) {
+      if (W.console) console.log('[UG ads] purchase tag error: ' + (err && err.message));
+    }
+  }
+
+  (function waitForEcwid() {
+    if (W.Ecwid && W.Ecwid.OnOrderPlaced && W.Ecwid.OnOrderPlaced.add) {
+      W.Ecwid.OnOrderPlaced.add(onOrder);
+    } else {
+      setTimeout(waitForEcwid, 400);
+    }
+  })();
+})();
