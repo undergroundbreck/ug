@@ -387,3 +387,20 @@ function onPage(p){if(!p||p.type!=="PRODUCT"){cur=0;last=null;if(mo){mo.disconne
     }
   })();
 })();
+
+/* UG rental/demo booking conversion (Nov 1, 2026).
+   The Hubtiger rentals widget (iframe on /snowboard-rentals-breckenridge)
+   posts {event:"pageView",label:"Reservation Booked"} to this page when a
+   booking is completed. Send one Google Ads "Rental booking (Hubtiger)"
+   conversion ($80 flat value) for it. Ignores messages from any other origin. */
+!function(){var W=window;if(W.__ugRentalTag)return;W.__ugRentalTag=1;
+var SEND_TO="AW-18513495206/7l6qCIqgjLAdEKaJ9vtE";
+W.addEventListener("message",function(e){try{
+if(!/^https:\/\/([a-z0-9-]+\.)*hubtiger\.com$/i.test(e.origin||""))return;
+var d=e.data;if(typeof d==="string"){try{d=JSON.parse(d)}catch(x){return}}
+if(!d||d.label!=="Reservation Booked")return;
+try{var t=+sessionStorage.getItem("ugRentalBooked")||0;if(Date.now()-t<60000)return;sessionStorage.setItem("ugRentalBooked",String(Date.now()))}catch(x){}
+W.dataLayer=W.dataLayer||[];if(typeof W.gtag!=="function"){W.gtag=function(){W.dataLayer.push(arguments)}}
+W.gtag("event","conversion",{send_to:SEND_TO,value:80,currency:"USD"});
+if(W.console)console.log("[UG ads] rental booking conversion sent")
+}catch(err){}})}();
