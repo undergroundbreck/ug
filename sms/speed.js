@@ -236,3 +236,6 @@ W.dataLayer=W.dataLayer||[];if(typeof W.gtag!=="function"){W.gtag=function(){W.d
 W.gtag("event","conversion",{send_to:SEND_TO,value:100,currency:"USD"});
 if(W.console)console.log("[SMS ads] rental booking conversion sent")
 }catch(err){}})}();
+
+/* 11/1/26 winter hours: on Black Friday (11/27/26) the "Find the shop" hours and the hours FAQ answer switch to 10am to 6pm every day on their own, so the homepage needs no edit that day. */
+(function(){if(Date.now()<Date.parse("2026-11-27T00:00:00-07:00"))return;function f(){var u=document.querySelector(".sms-visit__hours");if(u&&u.innerHTML.indexOf("Starting Black Friday")>-1){u.innerHTML="<li>Every day <b>10am to 6pm</b></li>"}document.querySelectorAll(".sms-faq details p").forEach(function(p){if(p.textContent.indexOf("Starting Black Friday")>-1){p.textContent=p.textContent.replace(/^Monday through Saturday 10am to 6pm, and Sunday 10am to 5pm\. Starting Black Friday \(Nov 27\) we're open 10am to 6pm every day\./,"Open every day 10am to 6pm.")}})}if(document.readyState!="loading")f();else document.addEventListener("DOMContentLoaded",f);new MutationObserver(function(){f()}).observe(document.documentElement,{childList:true,subtree:true})})();
