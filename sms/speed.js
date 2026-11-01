@@ -218,3 +218,20 @@ paypal.Messages({amount:a,currency:"USD",placement:"product",style:{layout:"text
 function watch(){if(mo)mo.disconnect();var r=D.querySelector(".product-details__product-price-row");if(!r)return;mo=new MutationObserver(function(rs){if(q||rs.every(function(x){return x.target.closest&&x.target.closest(".ug-pl")}))return;q=1;setTimeout(function(){q=0;put()},150)});mo.observe(r,{childList:!0,subtree:!0,characterData:!0})}
 function onPage(p){if(!p||p.type!=="PRODUCT"){cur=0;last=null;if(mo){mo.disconnect();mo=null}return}cur=p.productId;last=null;setTimeout(function(){if(cur!==p.productId)return;put();watch()},400)}
 (function w(){window.Ecwid&&Ecwid.OnPageLoaded?Ecwid.OnPageLoaded.add(onPage):setTimeout(w,400)})()}();
+
+/* SMS rental booking conversion (Nov 1, 2026).
+   The Hubtiger rentals widget (iframe on /rentals-and-demos) posts
+   {event:"pageView",label:"Reservation Booked"} to this page when a
+   booking is completed. Send one Google Ads "Rental booking (Hubtiger)"
+   conversion ($100 flat value) for it. Ignores messages from any other origin. */
+!function(){var W=window;if(W.__smsRentalTag)return;W.__smsRentalTag=1;
+var SEND_TO="AW-17913075906/fPnLCKnZh7AdEMKxz91C";
+W.addEventListener("message",function(e){try{
+if(!/^https:\/\/([a-z0-9-]+\.)*hubtiger\.com$/i.test(e.origin||""))return;
+var d=e.data;if(typeof d==="string"){try{d=JSON.parse(d)}catch(x){return}}
+if(!d||d.label!=="Reservation Booked")return;
+try{var t=+sessionStorage.getItem("smsRentalBooked")||0;if(Date.now()-t<60000)return;sessionStorage.setItem("smsRentalBooked",String(Date.now()))}catch(x){}
+W.dataLayer=W.dataLayer||[];if(typeof W.gtag!=="function"){W.gtag=function(){W.dataLayer.push(arguments)}}
+W.gtag("event","conversion",{send_to:SEND_TO,value:100,currency:"USD"});
+if(W.console)console.log("[SMS ads] rental booking conversion sent")
+}catch(err){}})}();
