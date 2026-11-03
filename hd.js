@@ -341,13 +341,34 @@ function onPage(p){if(!p||p.type!=="PRODUCT"){cur=0;last=null;if(mo){mo.disconne
   }
   W.gtag('config', AW_ID);
 
+  // Nov 3, 2026: Locals Day tickets and gift cards carry no product cost,
+  // so counting them made Google think orders were more profitable than
+  // they are. Their line totals come out of the conversion value, and an
+  // order that is only tickets or gift cards sends no conversion at all.
+  var EXCLUDE = /gift\s*card|locals?['\u2019]?\s*day|ticket/i;
+  function excludedValue(o) {
+    var items = o.items || o.cartItems || [];
+    var sum = 0;
+    for (var i = 0; i < items.length; i++) {
+      var it = items[i] || {}, pr = it.product || {};
+      var name = String(it.name || pr.name || '');
+      if (it.isGiftCard || pr.isGiftCard || EXCLUDE.test(name)) {
+        var qty = num(it.quantity) || 1;
+        var price = num(it.price) || num(pr.price) || num(it.productPrice);
+        sum += price * qty;
+      }
+    }
+    return sum;
+  }
+
   function orderValue(o) {
     var total = num(o.total);
     var tax = num(o.tax);
     var ship = num(o.shipping) ||
       num(o.shippingOption && (o.shippingOption.shippingRate || o.shippingOption.rate)) ||
       num(o.shippingRate);
-    var v = total - tax - ship;
+    var v = total - tax - ship - excludedValue(o);
+    if (excludedValue(o) > 0) return Math.max(0, Math.round(v * 100) / 100);
     if (v > 0) return Math.round(v * 100) / 100;
     if (num(o.subtotal) > 0) return Math.round(num(o.subtotal) * 100) / 100;
     return Math.round(total * 100) / 100;
@@ -365,6 +386,10 @@ function onPage(p){if(!p||p.type!=="PRODUCT"){cur=0;last=null;if(mo){mo.disconne
       if (email) W.gtag('set', 'user_data', { email: String(email).trim().toLowerCase() });
 
       var value = orderValue(o);
+      if (!(value > 0)) {
+        if (W.console) console.log('[UG ads] purchase tag skipped: order ' + id + ' is only tickets or gift cards');
+        return;
+      }
       W.gtag('event', 'conversion', {
         send_to: SEND_TO,
         value: value,
