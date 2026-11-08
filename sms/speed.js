@@ -208,7 +208,7 @@ function onPage(p){if(!p||p.type!=="PRODUCT"){cur=0;if(mo){mo.disconnect();mo=nu
 (function w(){window.Ecwid&&Ecwid.OnPageLoaded?Ecwid.OnPageLoaded.add(onPage):setTimeout(w,400)})()}();
 /* SMS PAYPAL PAY LATER BANNER (10/28/26, Austin, same as UG): "Pay in 4 interest-free payments of $X" / "As low as $X/mo" line right under the price on product pages. Uses the PayPal SDK Ecwid already loads for the SMS PayPal account (merchant H95XE2TLLQ3BW), so no extra script. Follows variant price changes; skipped under $30 (below Pay in 4's minimum) and on gift cards. Cart already shows Ecwid's own Pay in 4 line. */
 !function(){if(window.__smsPL)return;window.__smsPL=1;var D=document,cur=0,last=null,mo=null,q=0;
-var st=D.createElement("style");st.textContent=".ug-pl{margin:8px 0 2px;min-height:22px}";(D.head||D.documentElement).appendChild(st);
+var st=D.createElement("style");st.textContent=".ug-pl{margin:8px 0 2px;min-height:22px}body:has(.ec-paypal-pay-later-message) .ug-pl{display:none!important}";(D.head||D.documentElement).appendChild(st);
 function amt(){var e=D.querySelector(".product-details__product-price .details-product-price__value");if(!e)return 0;var n=parseFloat(e.textContent.replace(/[^0-9.]/g,""));return isFinite(n)?n:0}
 function put(){var row=D.querySelector(".product-details__product-price-row .product-details-module__content");if(!row)return;var ex=row.querySelector(".ug-pl"),a=amt();
 var gift=/gift card/i.test((D.querySelector(".product-details__product-title")||{}).textContent||"");

@@ -770,6 +770,8 @@ html body .fullscreen-overlay:has(.mobile-site-menu__content) button[class*=back
 .sms-mm__btns a{width:auto!important;max-width:none!important;justify-self:stretch;margin:0!important;display:flex;align-items:center;justify-content:center;min-height:48px;font:700 13px/1 Inter,system-ui,sans-serif;letter-spacing:.08em;text-transform:uppercase;text-decoration:none!important;border:2px solid #fff}
 .sms-mm__btns a.call{background:#fff;color:#0b0b0b!important}
 .sms-mm__btns a.dir{background:transparent;color:#fff!important}
+html body .sms-mm__btns.sms-mm__btns{display:grid!important;padding:0!important;grid-template-columns:1fr 1fr!important;gap:8px!important;margin-top:12px!important;width:100%!important}
+html body .sms-mm__btns.sms-mm__btns a{width:auto!important;max-width:none!important;justify-self:stretch!important;margin:0!important;display:flex!important;align-items:center!important;justify-content:center!important;min-height:48px!important}
 }
 /* Homepage hero photo in black and white (10/19/26). Only the photo; text and buttons keep their colors. Remove these two lines to go back to color. */
 html body .sms-hero{background-color:#000!important;background-blend-mode:luminosity!important}
