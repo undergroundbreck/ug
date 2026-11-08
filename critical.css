@@ -399,7 +399,7 @@ html body .ug-gc__sub{font-size:12px}
 /* 10/21/26 header icons (account, search, cart), Wishlist gone */
 #ec-instantsite .header-top-row__right .favorites{display:none!important}#ec-instantsite .header-top-row__right{display:flex!important;align-items:center!important;gap:18px!important}#ec-instantsite .hd-ic{display:inline-flex!important;align-items:center;justify-content:center;position:relative;background:none!important;border:0!important;padding:4px!important;margin:0!important;cursor:pointer;color:#fff!important;line-height:0!important}#ec-instantsite .hd-ic:hover{color:#e8622c!important}#ec-instantsite .hd-ic svg{display:block!important;width:22px;height:22px}.hd-sr{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}.hd-ct{position:absolute;top:-4px;right:-6px;min-width:16px;height:16px;border-radius:8px;background:#e8622c;color:#0b0b0b;font:700 10px/16px UGInter,Inter,Arial,sans-serif;text-align:center;padding:0 3px}@media(min-width:768px){#ec-instantsite .header-bottom-row .search{display:none!important}}
 /* 10/21/26 UG menu: Milo style compact dropdowns (hd.js builds them), Ecwid mega menu hidden on desktop */
-@media(min-width:768px){#portal-target>.teleported.ug-h-tcsg{display:none!important}}
+
 #ec-instantsite .categories-menu__list.ugm-on{display:flex!important}#ec-instantsite .categories-menu__list.ugm-on>li{position:relative!important}
 .ugm-dd{display:none;position:absolute;top:100%;left:-12px;z-index:2000;min-width:230px;margin:0;padding:12px 0;list-style:none;background:#1b1b1b;border:1px solid #2c2c2c;box-shadow:0 10px 24px rgba(0,0,0,.35)}
 #ec-instantsite .ugm-li:hover>.ugm-dd,#ec-instantsite .ugm-li:focus-within>.ugm-dd{display:block}
