@@ -515,3 +515,6 @@ body:has(#tile-gdpr-banner) .ug-sb{bottom:60px!important}
 .ug-fleet__card{background:#1a1a1a}
 /* Moved from the Instant Site head code 11/11/26 (head code size limit) */
 /* UG product pages on phones: price on first screen */@media(max-width:767px){.product-details__top-active-navigation .ec-breadcrumbs{display:none!important}.product-details__top{margin:0!important;height:0!important;min-height:0!important}.product-details__gallery.details-gallery{margin-bottom:8px!important}}/* UG hero text visible from the first frame, keeps the rise */@keyframes ugx-rise-soft{from{transform:translateY(18px)}to{transform:none}}.ug-rent__hero .ug-rent__wrap>*,.ug-svc__hero .ug-svc__wrap>*,.ug-lb .ug-lb-dark:first-child .ug-lb-wrap>*,.ugx-hero .ugx-wrap>*{animation-name:ugx-rise-soft!important}@media(prefers-reduced-motion:reduce){.ug-rent__hero .ug-rent__wrap>*,.ug-svc__hero .ug-svc__wrap>*,.ug-lb .ug-lb-dark:first-child .ug-lb-wrap>*,.ugx-hero .ugx-wrap>*{animation:none!important}}
+
+/* 11/11/26: one dropdown per menu item. Ecwid's wide menu is the dropdown for Snow, Skate, Shoes and Apparel; our compact dropdown only stays on Accessories (a custom item Ecwid has no menu for). */
+html body #ec-instantsite .categories-menu__list.ugm-on>li.ugm-li:not([data-ug-acc])>.ugm-dd{display:none!important}
