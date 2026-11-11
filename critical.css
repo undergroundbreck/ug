@@ -481,3 +481,35 @@ html body .fullscreen-overlay .mobile-site-menu__content .navigation-menu__list 
 /* 10/21/26 speed: one body font. Ecwid's theme was pulling DM Sans (86KB) for the store, header and announcement bar, and Anton for one homepage heading, on top of Inter. Everything now uses Inter and Bebas, which load anyway. */:root{--ec-font-family:UGInter,Inter,system-ui,"Segoe UI",Roboto,Arial,sans-serif!important;--global-body-font-family:UGInter,Inter!important;--global-title-font-family:UGInter,Inter!important}html body #ec-instantsite .custom-header,html body #ec-instantsite .custom-header :not(svg):not(path),html body #ec-instantsite .mobile-header,html body #ec-instantsite .mobile-header :not(svg):not(path),html body #ec-instantsite .key-info-bar,html body #ec-instantsite .key-info-bar *,html body #ec-instantsite .search,html body #ec-instantsite .search *,html body #ec-instantsite .ug-cd,html body #ec-instantsite .ug-cd *{font-family:UGInter,Inter,system-ui,"Segoe UI",Roboto,Arial,sans-serif!important}html body #ec-instantsite .head-text{font-family:'Bebas Neue',Impact,sans-serif!important}
 /* 10/21/26 speed: Ecwid writes font-family:inter inline on some tiles; send those to the same Inter cut we host (UGInter, 32KB Latin with font-display swap) so Ecwid's 337KB all-language Inter file never downloads. :where() keeps this at zero specificity so every Bebas heading rule still wins. */:where([style*="font-family:inter" i],[style*="font-family: inter" i]){font-family:UGInter,Inter,system-ui,"Segoe UI",Roboto,Arial,sans-serif!important}
 :where(.ug-rent,.ug-lb,.ug-svc,.ug-locals,.ug-ld-hero,.ug-ld,.ug-ld-share,[class^="ug-ld"],.ugx,.ugx-hero,.ugx-sec,.ug-fleet,.ug-klsub,.ugb){font-family:UGInter,Inter,system-ui,"Segoe UI",Roboto,Arial,sans-serif!important}
+/* UG 11/11/26 audit: phones. Cookie bar is one line and always sits above the sticky Add to Bag bar */
+#tile-gdpr-banner{z-index:10000!important}
+@media(max-width:767px){
+#tile-gdpr-banner .ins-cookie-banner__message{flex-wrap:nowrap!important;gap:8px!important;padding:8px 10px calc(8px + env(safe-area-inset-bottom))!important}
+#tile-gdpr-banner .ins-cookie-banner__content{flex:1 1 auto!important;min-width:0}
+#tile-gdpr-banner .ins-cookie-banner__content::before{content:"Cookies help us see what's working. Your call."!important;font-size:12px;line-height:1.25;display:block}
+#tile-gdpr-banner .ins-cookie-banner__legal-links,#tile-gdpr-banner .ins-control__text--settings,#tile-gdpr-banner .ins-cookie-banner__buttons a[role=link]{display:none!important}
+#tile-gdpr-banner .ins-cookie-banner__buttons{width:auto!important;flex:0 0 auto!important;gap:6px!important}
+#tile-gdpr-banner .ins-control__button{padding:0 10px!important;min-height:32px!important;height:32px!important;font-size:12px!important}
+body:has(#tile-gdpr-banner) .ug-sb{bottom:60px!important}
+/* Home: the intro copy moves below the boards on phones (the H1 stays first in the page code) */
+.ins-tiles--main>#tile-custom-code-tWZjqM{order:3!important}
+/* How we've got you: two columns on phones */
+.ug-svc__grid{grid-template-columns:1fr 1fr!important;gap:10px!important}
+.ug-svc__tile{padding:14px 12px!important}
+.ug-svc__tile h3{font-size:20px!important;line-height:1.05!important;margin:8px 0 6px!important}
+.ug-svc__tile p{font-size:13px!important;line-height:1.4!important;margin:0 0 10px!important}
+.ug-svc__tile .ug-svc__cta{font-size:11px!important}
+/* Home hero: shorter art so Shop Snowboards and the boards show on the first screen */
+.hero-banner__background,.hero-banner__background-image{height:150px!important;min-height:0!important;max-height:150px!important}
+.hero-banner__background-image{object-fit:contain!important}
+.hero-banner__content{padding-top:12px!important;padding-bottom:16px!important}
+.hero-banner__bottom{gap:12px!important}
+/* Product pages: photo capped so the name and price show on the first screen */
+.product-details__gallery .details-gallery__spacer{padding-top:min(42vh,var(--ug-gh,999px))!important}
+.product-details__gallery .details-gallery__thumbs--preview,.product-details__gallery .details-gallery__thumb,.product-details__gallery .details-gallery__thumb-img-wrapper{max-height:42vh!important}
+.product-details__gallery img{max-height:42vh!important;object-fit:contain!important}
+.product-details__gallery{margin-bottom:4px!important}
+}
+/* Demo fleet cards: dark tile behind the photo instead of a white flash before it loads */
+.ug-fleet__card img,.ug-fleet__card picture{background:#1a1a1a}
+.ug-fleet__card{background:#1a1a1a}
