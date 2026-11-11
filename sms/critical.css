@@ -1310,3 +1310,21 @@ html body #ec-instantsite #tile-contact-us-9wy2d2.sms-list button{background:#e8
 html body #ec-instantsite #tile-contact-us-9wy2d2.sms-list button *{background:transparent!important;color:#0b0b0b!important}
 html body #ec-instantsite #tile-contact-us-9wy2d2.sms-list button:hover{background:#fff!important}
 html body #ec-instantsite #tile-contact-us-9wy2d2.sms-list a{color:#fff!important}
+
+/* SMS 11/11/26 (same fixes as UG): phones get a one-line cookie bar that sits above the sticky Add to Bag bar, and product pages show the name and price on the first screen */
+#tile-gdpr-banner{z-index:10000!important}
+@media(max-width:767px){
+.ins-notices .ins-cookie-banner,#tile-gdpr-banner{width:100%!important;max-width:100%!important;left:0!important;right:0!important;bottom:0!important;margin:0!important;border-radius:0!important}
+.ins-cookie-banner__message{display:flex!important;align-items:center!important;flex-wrap:nowrap!important;gap:8px!important;padding:8px 10px calc(8px + env(safe-area-inset-bottom))!important}
+.ins-cookie-banner__title,.ins-cookie-banner__legal-links,.ins-cookie-banner__buttons a[role=link],.ins-control__text--settings{display:none!important}
+.ins-cookie-banner__content{flex:1 1 auto!important;min-width:0}
+.ins-cookie-banner__content span{display:none!important}
+.ins-cookie-banner__content::before{content:"Cookies help us see what's working. Your call.";font-size:12px;line-height:1.25;display:block}
+.ins-cookie-banner__buttons{display:flex!important;flex:0 0 auto!important;gap:6px!important;margin:0!important}
+.ins-cookie-banner__buttons .ins-control__button{padding:7px 10px!important;font-size:12px!important}
+body:has(#tile-gdpr-banner) .sms-sb{bottom:60px!important}
+.product-details__top .ec-breadcrumbs,.product-details__top-active-navigation .ec-breadcrumbs{display:none!important}
+.product-details__gallery .details-gallery__spacer{padding-top:min(42vh,999px)!important}
+.product-details__gallery .details-gallery__thumbs--preview,.product-details__gallery .details-gallery__thumb,.product-details__gallery .details-gallery__thumb-img-wrapper{max-height:42vh!important}
+.product-details__gallery img{max-height:42vh!important;object-fit:contain!important}
+}
