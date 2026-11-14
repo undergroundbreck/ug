@@ -319,7 +319,7 @@ function onPage(p){if(!p||p.type!=="PRODUCT"){cur=0;last=null;if(mo){mo.disconne
 ------------------------------------------------------------------- */
 (function () {
   // 11/11/26: Google Ads is paused, so this tag is off (saves ~165 KB and ~1 s of script per page). Set window.UG_ADS_ON = true (or change false to true here) to turn it back on.
-  if (!(window.UG_ADS_ON || false)) return;
+  window.UG_ADS_ON = true; // 11/14/26: ads back on (Austin), tag on again
   var AW_ID = 'AW-18513495206';
   var SEND_TO = 'AW-18513495206/IvT-CLe1tq4dEKaJ9vtE';
   var W = window, D = document;
