@@ -335,11 +335,31 @@ function onPage(p){if(!p||p.type!=="PRODUCT"){cur=0;last=null;if(mo){mo.disconne
     W.gtag = function () { W.dataLayer.push(arguments); };
     W.gtag('js', new Date());
   }
-  if (!D.querySelector('script[src*="gtag/js?id=' + AW_ID + '"]')) {
+  // 11/21/26 SPEED: the Ads tag (about 165 KB of script) no longer loads before the page shows.
+  // Visitors arriving from an ad click (gclid, gbraid, wbraid or gad_source in the URL) still get it
+  // right away so the click is saved. Everyone else gets it 2.5 s after the page finishes loading,
+  // or on their first scroll, tap or key press, whichever comes first. Config and conversion calls
+  // queue in dataLayer until it loads, so nothing is lost.
+  function loadAdsTag() {
+    if (D.querySelector('script[src*="gtag/js?id=' + AW_ID + '"]')) return;
     var s = D.createElement('script');
     s.async = true;
     s.src = 'https://www.googletagmanager.com/gtag/js?id=' + AW_ID;
     D.head.appendChild(s);
+  }
+  if (/[?&](gclid|gbraid|wbraid|gad_source)=/i.test(location.search)) {
+    loadAdsTag();
+  } else {
+    var adsGo = function () {
+      if (adsGo.done) return;
+      adsGo.done = 1;
+      loadAdsTag();
+    };
+    if (D.readyState === 'complete') setTimeout(adsGo, 2500);
+    else W.addEventListener('load', function () { setTimeout(adsGo, 2500); });
+    ['pointerdown', 'keydown', 'scroll', 'touchstart'].forEach(function (ev) {
+      W.addEventListener(ev, adsGo, { once: true, passive: true });
+    });
   }
   W.gtag('config', AW_ID);
 
