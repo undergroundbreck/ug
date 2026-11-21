@@ -1329,3 +1329,6 @@ body:has(#tile-gdpr-banner) .sms-sb{bottom:60px!important}
 .product-details__gallery img{max-height:42vh!important;object-fit:contain!important}
 }
 /* 11/21/26 speed: phones and tablets have no hover, so the second "hover" photo on every product card is never seen; hiding it stops lazy images from downloading it (about 40% fewer image requests on category pages). */@media (hover:none){#ec-instantsite .grid-product__picture-additional{display:none!important}}
+
+/* 11/21/26 sister-shop line in the footer + sister-shop cards (xs.js) */
+.sms-ft p.sms-ft-sis{border-top:1px solid #222;margin:36px 0 0!important;padding:20px 0 0;text-align:center!important;font-size:14px!important;color:#9a9a9a!important}html body #ec-instantsite .footer-wrapper .sms-ft p.sms-ft-sis a,html body .sms-ft p.sms-ft-sis a{color:#e8622c!important;opacity:1!important;font-weight:700;text-decoration:none!important;border:0!important}.sms-ft-sis+.sms-ft-q{margin-top:18px;border-top:0}
